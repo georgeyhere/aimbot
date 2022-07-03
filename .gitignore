@@ -1,3 +1,8 @@
 /ip/DigilentIP/*
 /prj/*
-
+/prj/ov7670_vitis/.metadata
+/prj/ov7670_vitis/camtest_wrapper/
+/prj/ov7670_vitis/i2c_test_system
+/prj/ov7670_vitis/RemoteSystemsTempFiles
+/prj/ov7670_vitis/.analytics
+/prj/ov7670_vitis/IDE.log
