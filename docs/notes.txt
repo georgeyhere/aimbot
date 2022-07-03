@@ -1,0 +1,47 @@
+TODO:
+    -> i2c MASTER
+        - better testbench for i2c master 
+        - add input/output buffers to i2c master 
+
+
+__7/2__
+
+Need to make an i2c master IP.
+    - I could get one from openCores.
+    - Or I could make my own. 
+    - Or pay for Xilinx IP. 
+    
+For a custom i2c master IP I would need:
+    - input and output buffers
+    - i2c master write functionality
+    - i2c master read functionality
+    - glue logic between i2c master and buffers
+    - AXI slave interface
+    - custom drivers 
+
+Xilinx IP:
+    Pros: 
+        - almost guaranteed to work 
+        - will come with drivers 
+    Cons: 
+        - have to pay 
+
+Custom IP:
+    Pros: 
+        - learning experience 
+    Cons:
+        - take a lot of time 
+        - reliability not guaranteed (depends on time investment)
+
+Open Source IP:
+    Pros:
+        - high likelihood it will work 
+    Cons:
+        - may have to write own drivers 
+
+I will source an open-source IP. Maybe I will make my own IP in the future, but for 
+now the goal of this project is to focus on the Embedded software aspect and learn 
+to use VDMA.
+
+
+
