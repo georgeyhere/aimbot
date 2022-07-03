@@ -1,0 +1,37 @@
+#include "i2c_master.h"
+#include "i2c_master_l.h"
+
+/*
+ * read data byte
+  set start to force generation of a start condition
+  start is implied when bus is inactive or active with write or different address
+  set stop to issue a stop condition after reading current byte
+  if stop is set with read command, then data_out_last will be set
+ */
+int i2c_read_byte(i2c_device *instance_ptr)
+{
+	uint32_t reg_val;
+
+	reg_val = I2C_GET_STATUS_REG(instance_ptr->reg_base_address);
+
+	// clear write bit
+	reg_val &= I2C_CMD_WR_EN
+
+
+	return reg_val;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

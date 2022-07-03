@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="i2c_test" location="C:/Users/george/Documents/GitHub/aimbot/prj/ov7670_vitis/i2c_test" platform="C:/Users/george/Documents/GitHub/aimbot/prj/ov7670_vitis/camtest_wrapper/export/camtest_wrapper/camtest_wrapper.xpfm" platformUID="xilinx:zybo-z7-20::0.0(custom)" systemProject="i2c_test_system" sysConfig="camtest_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="755251eb04c1d09b76f27e2a32d1267a">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.621635041" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.976011756" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

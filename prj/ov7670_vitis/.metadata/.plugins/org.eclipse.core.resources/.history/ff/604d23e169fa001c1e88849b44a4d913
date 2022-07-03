@@ -1,0 +1,35 @@
+#include "i2c_master.h"
+#include "i2c_master_l.h"
+
+/*
+01 aaaaaaa : start write to address
+write 0x11223344 to register 0x0004 on device at 0x50
+01 1010000  start write to 0x50
+*/
+
+void i2c_start_condition(i2c_device *instance_ptr, uint32_t addr)
+{
+	uint32_t reg_val;
+
+	// get current control register
+	reg_val = I2C_GET_CMD_REG(instance_ptr->reg_base_address);
+
+	// mask off cmd_stop, set cmd_start and i2c slave address
+	reg_val &= ~(I2C_CMD_REG_STOP);
+	reg_val |= I2C_CMD_REG_START;
+	reg_val |= (addr & I2C_CMD_REG_ADDR_MASK);
+
+	// write to control register
+	I2C_SET_CMD_REG(instance_ptr->reg_base_address, reg_val);
+}
+
+
+
+
+
+
+
+
+
+
+
