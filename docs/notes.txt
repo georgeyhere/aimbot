@@ -3,6 +3,14 @@ TODO:
         - better testbench for i2c master 
         - add input/output buffers to i2c master 
 
+__7/9__
+
+I'm stupid. Xilinx offers two IP: 
+    1) AXI IIC
+    2) I2C Bus Master Controller
+The Bus Master Controller requires a license. The AXI IIC 
+does not. I never thought to look up IIC, only I2C. That makes 
+life significantly easier at least. 
 
 __7/2__
 
@@ -30,7 +38,7 @@ Custom IP:
     Pros: 
         - learning experience 
     Cons:
-        - take a lot of time 
+        - lower performance
         - reliability not guaranteed (depends on time investment)
 
 Open Source IP:

@@ -1,16 +1,19 @@
 {
 	"folders": [
-		{
-			"path": "docs"
-		},
-		{
-			"path": "ip"
-		},
-		{
-			"path": "rtl"
-		},
-		{
-			"path": "constr"
-		}
-	]
+        {
+            "path": "docs"
+        },
+        {
+            "path": "ip"
+        },
+        {
+            "path": "rtl"
+        },
+        {
+            "path": "constr"
+        },
+        {
+            "path": "prj\\ov7670_vitis\\i2c_test\\src"
+        }
+    ]
 }
