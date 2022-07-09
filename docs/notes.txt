@@ -12,6 +12,17 @@ The Bus Master Controller requires a license. The AXI IIC
 does not. I never thought to look up IIC, only I2C. That makes 
 life significantly easier at least. 
 
+The only caveat is that IIC != SCCB. However, the differences 
+are pretty minor. SCCB does not use open-drain drivers like 
+i2c does, hence no pullups required. With i2c, SCL is 
+bidirectional, in SCCB it is only driven by the master. It 
+should be pretty trivial to convert.
+
+Apart from writing drivers for camera configuration, I'm free 
+to start my video capture camera IP. I'm going to base it off 
+the video test pattern generator.
+
+
 __7/2__
 
 Need to make an i2c master IP.
