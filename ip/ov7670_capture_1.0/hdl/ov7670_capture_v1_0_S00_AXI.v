@@ -4,7 +4,8 @@
 	module ov7670_capture_v1_0_S00_AXI #
 	(
 		// Users to add parameters here
-
+        parameter X_RES = 640,
+        parameter Y_RES = 480,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -15,7 +16,16 @@
 	)
 	(
 		// Users to add ports here
+        input wire i_pclk,
+        input wire i_vsync,
+        input wire i_href,
+        input wire [7:0] i_data,
 
+        output wire [15:0] M_AXIS_VIDEO_TDATA,
+        output wire M_AXIS_TVALID,
+        input  wire M_AXIS_VIDEO_TREADY,
+        output wire M_AXIS_VIDEO_TUSER,
+        output wire M_AXIS_VIDEO_TLAST,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -398,7 +408,24 @@
 	end    
 
 	// Add user logic here
+    cam_capture_maxis 
+    #(.X_RES(X_RES),
+      .Y_RES(Y_RES))
+    capture_i (
+        .i_resetn (S_AXI_ARESETN),
+        .i_enable (slv_reg0[0]),
 
+        .i_pclk   (i_pclk),
+        .i_vsync  (i_vsync),
+        .i_href   (i_href),
+        .i_data   (i_data),
+
+        .M_AXIS_VIDEO_TDATA  (M_AXIS_VIDEO_TDATA),
+        .M_AXIS_TVALID       (M_AXIS_TVALID),
+        .M_AXIS_VIDEO_TREADY (M_AXIS_VIDEO_TREADY),
+        .M_AXIS_VIDEO_TUSER  (M_AXIS_VIDEO_TUSER),
+        .M_AXIS_VIDEO_TLAST  (M_AXIS_VIDEO_TLAST)
+    );
 	// User logic ends
 
 	endmodule

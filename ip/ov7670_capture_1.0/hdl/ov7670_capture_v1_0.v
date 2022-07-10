@@ -4,7 +4,8 @@
 	module ov7670_capture_v1_0 #
 	(
 		// Users to add parameters here
-
+        parameter X_RES = 640,
+        parameter Y_RES = 480,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -15,7 +16,16 @@
 	)
 	(
 		// Users to add ports here
+        input wire i_pclk,
+        input wire i_vsync,
+        input wire i_href,
+        input wire [7:0] i_data,
 
+        output wire [15:0] M_AXIS_VIDEO_TDATA,
+        output wire M_AXIS_TVALID,
+        input  wire M_AXIS_VIDEO_TREADY,
+        output wire M_AXIS_VIDEO_TUSER,
+        output wire M_AXIS_VIDEO_TLAST,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -45,6 +55,8 @@
 	);
 // Instantiation of Axi Bus Interface S00_AXI
 	ov7670_capture_v1_0_S00_AXI # ( 
+        .X_RES (X_RES),
+        .Y_RES (Y_RES),
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) ov7670_capture_v1_0_S00_AXI_inst (
@@ -68,7 +80,16 @@
 		.S_AXI_RDATA(s00_axi_rdata),
 		.S_AXI_RRESP(s00_axi_rresp),
 		.S_AXI_RVALID(s00_axi_rvalid),
-		.S_AXI_RREADY(s00_axi_rready)
+		.S_AXI_RREADY(s00_axi_rready),
+        .i_pclk  (i_pclk),
+        .i_vsync (i_vsync),
+        .i_href  (i_href),
+        .i_data  (i_data),
+        .M_AXIS_VIDEO_TDATA  (M_AXIS_VIDEO_TDATA),
+        .M_AXIS_TVALID       (M_AXIS_TVALID),
+        .M_AXIS_VIDEO_TREADY (M_AXIS_VIDEO_TREADY),
+        .M_AXIS_VIDEO_TUSER  (M_AXIS_VIDEO_TUSER),
+        .M_AXIS_VIDEO_TLAST  (M_AXIS_VIDEO_TLAST)
 	);
 
 	// Add user logic here
