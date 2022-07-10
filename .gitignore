@@ -3,3 +3,4 @@
 !/ip/ov7670_capture_1.0
 /prj/*
 !/prj/tpg_sys.tcl
+!/prj/tpg_vdma_sys.tcl
