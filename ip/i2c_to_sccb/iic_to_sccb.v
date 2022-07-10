@@ -16,7 +16,7 @@
 module iic_to_sccb 
     (
     // SCCB Interface
-    inout  wire SIOC,
+    output wire SIOC,
     inout  wire SIOD,
 
     // AXI IIC Interface

@@ -1,7 +1,10 @@
 TODO:
-    -> i2c MASTER
-        - better testbench for i2c master 
-        - add input/output buffers to i2c master 
+    -> Camera Drivers 
+        - C functions to configure OV7670 camera 
+    -> Cam Capture 
+        - Testbench for cam_capture_maxis.sv 
+    -> VDMA Test 
+        - Create test project with VDMA and Xilinx TPG 
 
 __7/9__
 
