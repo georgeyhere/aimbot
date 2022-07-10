@@ -2,4 +2,4 @@
 !/ip/i2c_to_sccb
 !/ip/ov7670_capture_1.0
 /prj/*
-!/prj/ov7670_vitis/i2c_test
+!/prj/tpg_sys.tcl

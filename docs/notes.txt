@@ -14,6 +14,21 @@ seeing as it doesn't have any actual inputs. I just need to
 build a model for the camera, add some self-checking 
 elements, and monitor tuser, tend, and tvalid. 
 
+Now that the AXI video capture has been verified, the next
+big task is to integrate it into the pipeline. Here's an 
+issue: the Digilent HDMI IP only supports 800x600 output 
+resolution minimum. The OV7670 camera has a maximum
+resolution of 640x480.
+
+For now, I'm going to take some baby steps:
+    1) Xilinx TPG w/ VDMA (TPG res = display res)
+    2) Xilinx TPG w/ VDMA (TPG res < display res)
+
+And *then* I'll figure out how to integrate the capture IP.
+I still need to write drivers for camera configuration as 
+well but that'll be something I can do to take a break from 
+Xilinx block diagram finnagling.
+
 __7/9__
 
 I'm stupid. Xilinx offers two IP: 

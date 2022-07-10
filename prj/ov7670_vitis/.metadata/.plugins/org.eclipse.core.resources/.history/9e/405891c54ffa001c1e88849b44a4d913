@@ -1,7 +1,0 @@
-#include <stdio.h>
-#include "iic_master.h"
-
-int main()
-{
-	printf("I'm alive!\r\n");
-}

@@ -1,7 +1,0 @@
-#ifndef IIC_MASTER_L_H
-#define IIC_MASTER_L_H
-
-/***************************** Include Files ********************************/
-#include <stdio.h>
-
-#endif
