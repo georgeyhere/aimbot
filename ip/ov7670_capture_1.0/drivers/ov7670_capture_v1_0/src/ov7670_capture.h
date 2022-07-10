@@ -6,6 +6,7 @@
 /****************** Include Files ********************/
 #include "xil_types.h"
 #include "xstatus.h"
+#include <stdio.h>
 
 #define OV7670_CAPTURE_S00_AXI_SLV_REG0_OFFSET 0
 #define OV7670_CAPTURE_S00_AXI_SLV_REG1_OFFSET 4
@@ -14,6 +15,11 @@
 
 
 /**************************** Type Definitions *****************************/
+typedef struct {
+    UINTPTR BaseAddress;
+    uint8_t enabled;
+} ov7670_capture;
+
 /**
  *
  * Write a value to a OV7670_CAPTURE register. A 32 bit write is performed.
@@ -75,5 +81,29 @@
  *
  */
 XStatus OV7670_CAPTURE_Reg_SelfTest(void * baseaddr_p);
+
+
+/**
+ * @brief Function to initialize a ov7670_capture instance to a given base address.
+ * 
+ * @param instance_ptr is a pointer to an ov7670_capture instance.
+ * @param effective_addr is the base address of the peripheral.
+ */
+void ov7670_capture_initialize(ov7670_capture *instance_ptr, UINTPTR effective_addr);
+
+/**
+ * @brief Function to enable an ov7670_capture instance.
+ * 
+ * @param instance_ptr is a pointer to the ov7670 capture instance to enable.
+ */
+void ov7670_capture_enable(ov7670_capture *instance_ptr);
+
+
+/**
+ * @brief Function to disable an ov7670_capture instance.
+ * 
+ * @param instance_ptr is a pointer to the ov7670_capture instance to disable.
+ */
+void ov7670_capture_disable(ov7670_capture *instance_ptr);
 
 #endif // OV7670_CAPTURE_H
