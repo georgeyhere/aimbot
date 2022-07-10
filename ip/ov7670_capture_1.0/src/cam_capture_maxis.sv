@@ -96,6 +96,9 @@ module cam_capture_maxis
                             end 
                         end 
                     end 
+                    else begin 
+                        M_AXIS_TVALID <= 0;
+                    end 
                 end 
 
             endcase
