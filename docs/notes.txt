@@ -1,3 +1,5 @@
+https://docs.xilinx.com/v/u/en-US/xapp742-axi-vdma-reference-design
+
 TODO:
     -> Camera Drivers 
         - C functions to configure OV7670 camera 
@@ -27,7 +29,26 @@ For now, I'm going to take some baby steps:
 And *then* I'll figure out how to integrate the capture IP.
 I still need to write drivers for camera configuration as 
 well but that'll be something I can do to take a break from 
-Xilinx block diagram finnagling.
+Xilinx block diagram finnagling. 
+
+I found Xilinx documentation (xapp742) which describes using 
+VDMA with TPG, the exact starting point I wanted to do. It
+doesn't go into too much detail though. Although they are 
+almost 10 years old now, they're still super interesting to 
+look at. 
+
+The test application note implements a TPG feeding triple frame
+buffers in DDR via VDMA. It's divided into three sections:
+1) Processing Unit, 2) Video Pipeline, and 3) Memory Subsystem.
+Something particularly interesting is that the user can change 
+the resolution via UART. Since this requires the pixel clock
+to change, the designers use the configurable clock generator 
+on the Kintex dev board.
+
+It's kind of weird to look at in the sense that whoever made 
+this is working with some pretty complicated stuff, but 
+all the names in the project itself are the defaults.
+
 
 __7/9__
 
