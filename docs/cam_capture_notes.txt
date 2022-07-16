@@ -1,0 +1,78 @@
+https://zipcpu.com/blog/2021/08/28/axi-rules.html
+https://zipcpu.com/video/2022/03/14/axis-video.html
+https://www.xilinx.com/support/documentation/ip_documentation/axi_videoip/v1_0/ug934_axi_videoIP.pdf
+
+
+
+I need to make a module that can capture video data from the 
+OV7670 camera and feed into an AXI Stream Data FIFO.
+
+The module shall have the following functionality:
+    1) Support 640x480 30FPS RGB565 video capture.
+    2) Support 640x480 30FPS RGB565 video output.
+        2a) Video output shall be via AXI Stream interface. 
+    3) Allow user control via AXI Slave interface.
+        3a) User shall be able to enable/disable capture.
+
+The Xilinx VDMA supports data widths of 'multiples of 
+8 bits up to 1024 bits' so the video data itself can be
+left in RGB565 format.  
+
+==================== INTERFACE SPEC ======================
+
+->> SYSTEM
+    i_sysclk
+        - system clock 
+    i_resetn
+        - asynchronous active-low reset 
+
+->> CONTROL  
+    i_enable 
+        - on assert:
+            - start video capture at SoF 
+        - on deassert:
+            - immediately end capture 
+
+->> AXI4 STREAM OUTPUT 
+
+SIGNAL NAME          | DIR | WIDTH | DESCRIPTION
+---------------------------------------------------------------------------------
+m_axis_video_tdata   | OUT |  16   | output video data (RGB565) pixel 
+m_axis_tvalid        | OUT |  1    | output valid 
+m_axis_video_tready  | IN  |  1    | output ready (unused)
+
+m_axis_video_tuser   | OUT |  1    | output video data SoF; first pixel of frame  
+m_axis_video_tlast   | OUT |  1    | output video data EoL; last pixel of line 
+
+Video Data: 
+-> m_axis_video_tdata:
+    [15:11 ] [ 10:5 ] [ 4:0 ]
+       R        B        G       
+
+Start of Frame: 
+-> m_axis_tuser:
+    - 1 transaction wide pulse 
+    - must coincide with first pixel of frame 
+    - may be asserted before video data as long as there is no valid
+
+End of Line:
+-> m_axis_video_tlast:
+    - 1 transaction wide pulse 
+    - must coincide with last pixel of a scanline 
+
+Rules:
+    1) VALID must be cleared following any reset.
+    2) Nothing happens unless VALID && READY.
+    3) Something ALWAYS happens when VALID && READY.
+    4) Nothing can change unless !VALID or READY. 
+    5) There must be no combinatorial paths between input and output signals.
+    
+
+m_axis_video_tready is included in the interface but not used. This is 
+because this IP has no way of dealing with backpressure. If data is valid 
+but the slave is not ready, it may be lost!
+
+Thus, it is critical that whatever processing elements that utilize data 
+from this IP have some sort of resynchronization mechanism on tuser or tlast. 
+
+             

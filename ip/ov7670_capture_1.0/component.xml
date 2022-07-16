@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>ov7670_capture</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="S00_AXI"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>WIZ_DATA_WIDTH</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>WIZ_NUM_REG</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.WIZ_NUM_REG" spirit:minimum="4" spirit:maximum="512" spirit:rangeType="long">4</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
+          <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.S00_AXI.SUPPORTS_NARROW_BURST" spirit:choiceRef="choice_pairs_ce1226b1">0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>S00_AXI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>m_axis_video</spirit:name>
+      <spirit:displayName>m_axis_video</spirit:displayName>
+      <spirit:description>RGB565 video capture from OV7670</spirit:description>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TUSER</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_VIDEO_TUSER</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_VIDEO_TDATA</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_TVALID</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TLAST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_VIDEO_TLAST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>TREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>M_AXIS_VIDEO_TREADY</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>i_pclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>i_pclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.I_PCLK.ASSOCIATED_BUSIF">m_axis_video</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>S00_AXI</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>S00_AXI_reg</spirit:name>
+        <spirit:baseAddress spirit:format="long" spirit:resolve="user">0</spirit:baseAddress>
+        <spirit:range spirit:format="long">4096</spirit:range>
+        <spirit:width spirit:format="long">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>OFFSET_BASE_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_BASE_PARAM">C_S00_AXI_BASEADDR</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>OFFSET_HIGH_PARAM</spirit:name>
+            <spirit:value spirit:id="ADDRBLOCKPARAM_VALUE.S00_AXI.S00_AXI_REG.OFFSET_HIGH_PARAM">C_S00_AXI_HIGHADDR</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsynthesis</spirit:name>
+        <spirit:displayName>Verilog Synthesis</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>ov7670_capture_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>8781da9e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>ov7670_capture_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>8781da9e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_softwaredriver</spirit:name>
+        <spirit:displayName>Software Driver</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:sw.driver</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>7d251dca</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>94c7be1f</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>16328387</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>i_pclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_vsync</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_href</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_data</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_VIDEO_TDATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_TVALID</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_VIDEO_TREADY</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_VIDEO_TUSER</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>M_AXIS_VIDEO_TLAST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI data bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:order="3" spirit:rangeType="long">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+        <spirit:description>Width of S_AXI address bus</spirit:description>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>X_RES</spirit:name>
+        <spirit:displayName>X Res</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.X_RES">640</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>Y_RES</spirit:name>
+        <spirit:displayName>Y Res</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.Y_RES">480</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_6fc15197</spirit:name>
+      <spirit:enumeration>32</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_ce1226b1</spirit:name>
+      <spirit:enumeration spirit:text="true">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="false">0</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/ov7670_capture_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/cam_capture_maxis.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ov7670_capture_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_1102b436</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/ov7670_capture_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/cam_capture_maxis.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/ov7670_capture_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/data/ov7670_capture.mdd</spirit:name>
+        <spirit:userFileType>mdd</spirit:userFileType>
+        <spirit:userFileType>driver_mdd</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/data/ov7670_capture.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>driver_tcl</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/src/Makefile</spirit:name>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/src/ov7670_capture.h</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/src/ov7670_capture.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>drivers/ov7670_capture_v1_0/src/ov7670_capture_selftest.c</spirit:name>
+        <spirit:fileType>cSource</spirit:fileType>
+        <spirit:userFileType>driver_src</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/ov7670_capture_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_94c7be1f</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>OV7670 VGA output to AXI Stream</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI DATA WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI data bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH" spirit:choiceRef="choice_list_6fc15197" spirit:order="3">32</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_DATA_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 AXI ADDR WIDTH</spirit:displayName>
+      <spirit:description>Width of S_AXI address bus</spirit:description>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH" spirit:order="4" spirit:rangeType="long">4</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_ADDR_WIDTH">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">ov7670_capture_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>X_RES</spirit:name>
+      <spirit:displayName>X Res</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.X_RES">640</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Y_RES</spirit:name>
+      <spirit:displayName>Y Res</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Y_RES">480</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>ov7670_capture_v1.0</xilinx:displayName>
+      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-07-10T22:02:26Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58cec39e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3dc8536a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20c47e43_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3dff0bf9_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bab263c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5adcc3d0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f80ce74_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45e0c678_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56516595_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b18c40b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a19a8ac_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@339db749_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cbb3e44_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f23a0bc_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b69fd04_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66e206ce_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@307af5bf_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@783161c6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72d03ed6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62d201d2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68cdd19_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@630f4afa_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ba4adcc_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70bcaed8_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@545f8c21_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72a8b57d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c8d505e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d4e5cfe_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fb83d10_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76b9f20e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1826d1e6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1bc7ad42_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26a5af02_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1bcdcbed_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1122e6e6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33766f36_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3695d95e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35f5abcf_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@356f86fa_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50b96d04_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36ded68b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@661819a7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10514bc0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28d7b5a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4361a0f6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@121f1b06_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2efbbbf3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6547cc83_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23a8e28c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4810808b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d1edb98_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@53e3ebfa_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c72f87_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@313cd179_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d68322d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d93a518_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1827750d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f3446ad_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cd33c59_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42a25963_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@778edaeb_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5817a84d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24721c55_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13a311c3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d0f8135_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e8372a8_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1109c936_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@540a3d30_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b78ef05_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@780b5e6c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@776889b0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@290631d4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f5d2306_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41afb7c6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5508946a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@666ea003_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cf69c8a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d09917a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7049193a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@765be0fb_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1595486c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25b6b3c4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b372773_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41a689be_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22f7502b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38cc8a40_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4031c49b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@597a29da_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ea59fde_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@307de0c8_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11b75569_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78acf700_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@577e95c1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a98ec0b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d3bce73_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@360ea518_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@a0ef4da_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50060e94_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7464499e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57ad75d0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cec04e5_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a86b53_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1398ee81_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22ec42f6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d0ee122_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a458298_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@537dade5_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@702d6c91_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25675b1e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c8a738b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56b99685_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26664a4d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ea87ffe_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@254979fa_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64119b6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@dffa475_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c489667_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b2ba9e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ad73b5b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6699fc89_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2118e99_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20e089ea_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60864c18_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51a8fa2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@195df716_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@408f61a1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b0f3293_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3428e3de_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bb1a9e9_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75a5d4ad_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b1df4b9_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22c9445c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5be5b31b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5036211a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c0577df_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fab4197_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7738b108_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4953dd23_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2600bf8f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e18f400_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@321abe7b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74fe43c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4920e262_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2490709c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e3e8eda_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@165df595_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d79152c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36ad185d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2965798b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@730dc651_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fdd46d4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f33312b_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6512776d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48562875_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31c0001c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@569abbb7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55dabe20_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4dcf1799_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54472cfd_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30a3f4a7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b2805be_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@29f42a2c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@618c14e2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3564aa76_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6262c94f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22f9ae11_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e6dbcf4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fb449d0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cd0d4b3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72836dd2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@360ae48f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b444b7d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57394b38_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30cb7c5d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33335019_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e42cf40_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b051ea1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b014d5e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.2_AR000033086</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0093d193"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="df3b153e"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="0601c37f"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b96395fa"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7a17724f"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

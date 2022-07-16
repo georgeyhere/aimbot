@@ -1,0 +1,15 @@
+/ip/*
+/prj/*
+/sw/*
+
+!/ip/DigilentIP
+!/ip/i2c_to_sccb
+!/ip/ov7670_capture_1.0
+
+!/prj/tpg_sys.tcl
+!/prj/tpg_vdma_sys.tcl
+
+!/sw/tpg
+!/sw/tpg_vdma/tpg_vdma_test/*
+
+
