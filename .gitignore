@@ -8,6 +8,12 @@
 !/prj/tpg_sys.tcl
 !/prj/tpg_vdma_sys.tcl
 
+/sw/tpg/.metadata
+/sw/tpg/RemoteSystemsTempFiles
+/sw/tpg/vdma_sys_wrapper
+/sw/tpg/.analytics
+/sw/tpg/IDE.log
+
 /sw/tpg_vdma/.metadata
 /sw/tpg_vdma/RemoteSystemsTempFiles
 /sw/tpg_vdma/vdma_sys_wrapper/

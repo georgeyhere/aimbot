@@ -3,7 +3,7 @@
 #include "vdma_api.h"
 #include "platform.h"
 
-
+#define TPG_DEVICEID        XPAR_V_TPG_0_DEVICE_ID
 
 int main()
 {
