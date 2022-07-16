@@ -14,6 +14,12 @@
         },
         {
             "path": "prj\\ov7670_vitis\\i2c_test\\src"
+        },
+        {
+            "path": "..\\..\\..\\Downloads\\xapp742\\xapp742\\vdma_ref_design\\SW\\SDK_Workspace"
+        },
+        {
+            "path": "..\\..\\..\\Downloads\\tpg_vdma_lab_sources_vivado_sdk_udemy"
         }
     ]
 }

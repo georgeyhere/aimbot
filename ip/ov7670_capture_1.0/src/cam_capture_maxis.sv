@@ -70,34 +70,29 @@ module cam_capture_maxis
                 end 
 
                 ST_ACTIVE: begin 
-                    if(i_href) begin 
+                    if(!i_href) begin 
+                        M_AXIS_TVALID <= 0;
+                    end 
+                    else begin
                         pixel_half <= !pixel_half;
 
                         if(!pixel_half) begin
-                            // register first byte  
                             M_AXIS_TVALID <= 0;
                             M_AXIS_VIDEO_TDATA[7:0] <= i_data;
                         end 
                         else begin 
-                            // register second byte to complete pixel
                             M_AXIS_TVALID <= 1;
                             M_AXIS_VIDEO_TDATA[15:8] <= i_data;
 
-                            // update counters
                             if(pixel_count == X_RES-1) begin 
                                 pixel_count <= 0;
-                                if(row_count == Y_RES-1) 
-                                    STATE <= ST_IDLE; 
-                                else 
-                                    row_count <= row_count+1;   
+                                if(row_count == Y_RES-1) STATE <= ST_IDLE; 
+                                else row_count <= row_count+1;  
                             end 
                             else begin 
                                 pixel_count <= pixel_count+1;
                             end 
                         end 
-                    end 
-                    else begin 
-                        M_AXIS_TVALID <= 0;
                     end 
                 end 
 

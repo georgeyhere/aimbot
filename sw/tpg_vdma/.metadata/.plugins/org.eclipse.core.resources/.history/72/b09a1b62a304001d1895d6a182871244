@@ -1,0 +1,12 @@
+/* @file vdma_api.c
+ *
+ * https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/axivdma/examples/vdma_api.c
+ *
+ */
+
+#define DEBUG_MODE 0
+
+/******************************* Include Files **************************************/
+#include "xaxivdma.h"
+#include "xparameters.h"
+#include "xil_exception.h"

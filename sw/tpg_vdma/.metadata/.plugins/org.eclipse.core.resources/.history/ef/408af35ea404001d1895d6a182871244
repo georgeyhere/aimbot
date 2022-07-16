@@ -1,0 +1,56 @@
+/* @file vdma_api.h
+ *
+ * Adapted from:
+ * https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/axivdma/examples/vdma_api.c
+ *
+ */
+
+#define DEBUG_MODE 0
+
+/******************************* Include Files **************************************/
+#include "xaxivdma.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+/******************************** Custom Types **************************************/
+typedef struct vdma_handle
+{
+	unsigned int      device_id; // VDMA device ID
+	unsigned int      init_done; // State var; indicates if initialization is done
+
+	unsigned int      buffer_address;        // buffer address for read and write
+	unsigned int      enable_frm_cnt_intr;   // flag to trigger interrupt on frame done
+	unsigned int      number_of_frame_count; // counter for VDMA frame interrupt
+
+	XAxiVdma*         InstancePtr; // pointer to XAxiVdma instance
+	XAxiVdma_DmaSetup ReadCfg;     // read channel config struct
+	XAxiVdma_DmaSetup WriteCfg;    // write channel config struct
+
+	unsigned int      hsize; // horizontal size of frame
+	unsigned int      vsize; // vertical size of frame
+};
+
+/**************************** Constant Definitions *********************************/
+
+vdma_handle vdma_context[XPAR_XAXIVDMA_NUM_INSTANCES];
+static unsigned int context_init=0;
+
+/**************************** Function Definitions *********************************/
+
+static int ReadSetup(vdma_handle *vdma_context);
+
+static int WriteSetup(vdma_handle *vdma_context);
+
+static int StartTransfer(XAxiVdma *InstancePtr);
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,6 +8,28 @@ TODO:
     -> VDMA Test 
         - Create test project with VDMA and Xilinx TPG 
 
+__7/15__
+
+Firmware time. I have a test project in Vivado with a 
+TPG and VDMA all set up. Need to define exactly what 
+kind of tests I want to do on this test platform before
+moving to making my own pipeline. 
+
+The project files provided with xapp742 were useful
+for showing an example video processing pipeline. They 
+were not useful for showing how IPs should be configured 
+nor for SDK source code. It's kind of crazy how far Xilinx
+has come with their IP and driver support. 
+
+I'm going to first do a VDMA polled application using the
+API provided by Xilinx on their Github. I would like 
+to do an interrupt-based version after the polled one 
+works but one thing at a time. 
+
+I don't like the coding style the Xilinx employee used.
+It's like all over the place. I'm going to try to clean 
+it up a little bit.
+
 __7/10__
 
 The goal for today is to test the AXI stream IP that I 

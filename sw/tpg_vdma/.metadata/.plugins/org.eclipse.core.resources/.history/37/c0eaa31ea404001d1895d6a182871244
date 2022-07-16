@@ -1,0 +1,30 @@
+/* @file vdma_api.c
+ *
+ * https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/axivdma/examples/vdma_api.c
+ *
+ */
+
+#define DEBUG_MODE 0
+
+/******************************* Include Files **************************************/
+#include "xaxivdma.h"
+#include "xparameters.h"
+#include "xil_exception.h"
+
+/******************************** Custom Types **************************************/
+typedef struct vdma_handle
+{
+	unsigned int      device_id;
+	unsigned int      init_done;
+
+	unsigned int      buffer_address;
+	unsigned int      enable_frm_cnt_intr;
+	unsigned int      number_of_frame_count;
+
+	XAxiVdma*         InstancePtr;
+	XAxiVdma_DmaSetup ReadCfg;
+	XAxiVdma_DmaSetup WriteCfg;
+
+	unsigned int      hsize;
+	unsigned int      vsize;
+};

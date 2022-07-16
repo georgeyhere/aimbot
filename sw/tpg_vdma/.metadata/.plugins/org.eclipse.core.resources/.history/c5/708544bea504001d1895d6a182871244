@@ -1,0 +1,47 @@
+/* @file vdma_api.c
+ *
+ * https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/axivdma/examples/vdma_api.c
+ *
+ */
+/******************************* Include Files **************************************/
+#include "vdma_api.h"
+
+
+/***************************** Function Definitions *********************************/
+
+/**
+ * Function to configure the read channel of the VDMA.
+ *
+ * @param vdma_context is the context pointer to the VDMA.
+ * @return XST_SUCCESS if successful, else XST_FAILURE.
+ */
+static int ReadSetup(vdma_andle *vdma_context)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
