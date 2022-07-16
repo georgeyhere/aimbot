@@ -10,7 +10,7 @@
 
 /sw/tpg/.metadata
 /sw/tpg/RemoteSystemsTempFiles
-/sw/tpg/vdma_sys_wrapper
+/sw/tpg/tpg_sys_wrapper
 /sw/tpg/.analytics
 /sw/tpg/IDE.log
 
