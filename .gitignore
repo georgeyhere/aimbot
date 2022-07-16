@@ -10,6 +10,7 @@
 !/prj/tpg_vdma_sys.tcl
 
 !/sw/tpg
-!/sw/tpg_vdma/tpg_vdma_test/*
+!/sw/tpg_vdma/tpg_vdma_test/
+
 
 
