@@ -1,6 +1,6 @@
 Nothing to build in platform 'vdma_sys_wrapper'
 
-18:45:26 **** Incremental Build of configuration Debug for project tpg_vdma_test ****
+11:56:12 **** Incremental Build of configuration Debug for project tpg_vdma_test ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -9,23 +9,6 @@ make --no-print-directory main-build
 'Building file: ../src/vdma_api.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/vdma_api.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/george/Documents/GitHub/aimbot/sw/tpg_vdma/vdma_sys_wrapper/export/vdma_sys_wrapper/sw/vdma_sys_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/vdma_api.d" -MT"src/vdma_api.o" -o "src/vdma_api.o" "../src/vdma_api.c"
-In file included from ../src/vdma_api.c:7:
-../src/vdma_api.h:50:12: warning: 'vdma_readsetup' declared 'static' but never defined [-Wunused-function]
-   50 | static int vdma_readsetup(VdmaHandle *vdma_context);
-      |            ^~~~~~~~~~~~~~
-../src/vdma_api.h:58:12: warning: 'vdma_write_setup' declared 'static' but never defined [-Wunused-function]
-   58 | static int vdma_write_setup(VdmaHandle *vdma_context);
-      |            ^~~~~~~~~~~~~~~~
-../src/vdma_api.h:67:12: warning: 'vdma_start_transfer' declared 'static' but never defined [-Wunused-function]
-   67 | static int vdma_start_transfer(XAxiVdma *InstancePtr);
-      |            ^~~~~~~~~~~~~~~~~~~
-../src/vdma_api.c:18:12: warning: 'vdma_read_setup' defined but not used [-Wunused-function]
-   18 | static int vdma_read_setup(VdmaHandle *vdma_context)
-      |            ^~~~~~~~~~~~~~~
-In file included from ../src/vdma_api.c:7:
-../src/vdma_api.h:40:21: warning: 'context_init' defined but not used [-Wunused-variable]
-   40 | static unsigned int context_init=0;
-      |                     ^~~~~~~~~~~~
 'Finished building: ../src/vdma_api.c'
 ' '
 'Building target: tpg_vdma_test.elf'

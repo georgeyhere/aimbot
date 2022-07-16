@@ -36,8 +36,8 @@ typedef struct
 
 /**************************** Constant Definitions *********************************/
 
-VdmaHandle vdma_context[XPAR_XAXIVDMA_NUM_INSTANCES];
-static unsigned int context_init=0;
+VdmaHandle           vdma_context [XPAR_XAXIVDMA_NUM_INSTANCES];
+static unsigned int  context_init=0;
 
 /**************************** Function Definitions *********************************/
 
@@ -47,7 +47,7 @@ static unsigned int context_init=0;
  * @param vdma_context is the context pointer to the VDMA.
  * @return XST_SUCCESS if successful, else XST_FAILURE.
  */
-static int vdma_readsetup(VdmaHandle *vdma_context);
+static int vdma_read_setup(VdmaHandle *vdma_context);
 
 /**
  * Function to configure the write channel of the VDMA.
@@ -82,6 +82,9 @@ static int vdma_start_transfer(XAxiVdma *InstancePtr);
  */
 int vdma_run_triple_buffer(XAxiVdma *InstancePtr, int DeviceId, int hsize, int vsize,
 		                    int buf_base_addr, int number_frame_count, int enable_frm_cnt_intr);
+
+
+
 
 #endif
 
