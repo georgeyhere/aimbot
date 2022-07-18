@@ -14,6 +14,7 @@
 #include "xaxivdma.h"
 #include "xparameters.h"
 #include "xil_exception.h"
+#include "xil_assert.h"
 #include <stdio.h>
 
 /******************************** Custom Types **************************************/
@@ -34,9 +35,7 @@ typedef struct
 	unsigned int      vsize; // vertical size of frame
 } VdmaHandle;
 
-/**************************** Constant Definitions *********************************/
-static VdmaHandle vdma_context [XPAR_XAXIVDMA_NUM_INSTANCES];
-static unsigned int context_init=0;
+
 
 /**************************** Function Definitions *********************************/
 

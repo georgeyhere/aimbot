@@ -7,6 +7,11 @@
 #include "vdma_api.h"
 
 
+/**************************** Constant Definitions *********************************/
+
+VdmaHandle vdma_context [XPAR_XAXIVDMA_NUM_INSTANCES];
+static unsigned int context_init=0;
+
 /***************************** Function Definitions *********************************/
 
 /**
@@ -40,7 +45,7 @@ static int vdma_read_setup(VdmaHandle *vdma_context)
 
 	/* Initialize memory addresses for the triple frame buffers. */
 	addr = vdma_context->buffer_address;
-	for (int index=0; index<vdma_context->InstancePtr->MaxNumFrames; index++) {
+	for (int index=0; index < vdma_context->InstancePtr->MaxNumFrames; index++) {
 		vdma_context->ReadCfg.FrameStoreStartAddr[index] = addr;
 
 #if DEBUG_MODE
@@ -88,7 +93,7 @@ static int vdma_write_setup(VdmaHandle *vdma_context)
 	vdma_context->WriteCfg.Stride              = vdma_context->hsize;
 	vdma_context->WriteCfg.FrameDelay          = 0;
 	vdma_context->WriteCfg.EnableCircularBuf   = 1;
-	vdma_context->WriteCfg.EnableSync          = 0;
+	vdma_context->WriteCfg.EnableSync          = 1;
 	vdma_context->WriteCfg.PointNum            = 0;
 	vdma_context->WriteCfg.EnableFrameCounter  = 0; // endless transfers
 	vdma_context->WriteCfg.FixedFrameStoreAddr = 0;
@@ -102,16 +107,18 @@ static int vdma_write_setup(VdmaHandle *vdma_context)
 
 	/* Initialize memory addresses for the triple frame buffers. */
 	addr = vdma_context->buffer_address;
+
 #if DEBUG_MODE
-	//
 	addr = addr + vdma_context->InstancePtr->MaxNumFrames *
 		  (vdma_context->stride * vdma_context->vsize);
 #endif
+
 	for(int index=0; index < vdma_context->InstancePtr->MaxNumFrames; index++) {
 		vdma_context->WriteCfg.FrameStoreStartAddr[index] = addr;
 #if DEBUG_MODE
 		printf("Write Buffer %d address: 0x%x \r\n", index, addr);
 #endif
+        addr += vdma_context->hsize * vdma_context->vsize;
 	}
 
 	/* Apply the frame buffer addresses to the VDMA instance. */
@@ -192,6 +199,7 @@ int vdma_run_triple_buffer(XAxiVdma *InstancePtr, int DeviceId, int hsize, int v
 			vdma_context[i].enable_frm_cnt_intr    = 0;
 			vdma_context[i].number_of_frame_count  = 0;
 		}
+        context_init = 1;
 	}
 
 	/* Look up the VDMA configuration for provided device ID. */
@@ -211,6 +219,7 @@ int vdma_run_triple_buffer(XAxiVdma *InstancePtr, int DeviceId, int hsize, int v
 			printf("VDMA configuration initialization failed: %d \r\n", status);
 			return XST_FAILURE;
 		}
+        vdma_context[DeviceId].init_done = 1;
 	}
 
 	/* Update vdma_context members. */
@@ -219,7 +228,7 @@ int vdma_run_triple_buffer(XAxiVdma *InstancePtr, int DeviceId, int hsize, int v
 	vdma_context[DeviceId].buffer_address        = buf_base_addr;
 	vdma_context[DeviceId].enable_frm_cnt_intr   = enable_frm_cnt_intr;
 	vdma_context[DeviceId].number_of_frame_count = number_frame_count;
-	vdma_context[DeviceId].hsize                 = hsize * (configPtr->Mm2SStreamWidth);
+	vdma_context[DeviceId].hsize                 = hsize * (configPtr->Mm2SStreamWidth>>3);
 
 	/* Setup the write channel. */
 	status = vdma_write_setup(&vdma_context[DeviceId]);

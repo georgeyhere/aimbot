@@ -2,12 +2,12 @@
 #include "tpg_utilities.h"
 #include "vdma_api.h"
 
-#define TPG_DEVICEID        XPAR_V_TPG_0_DEVICE_ID
+unsigned int srcBuffer = (XPAR_PS7_DDR_0_S_AXI_BASEADDR + 0x100000);
 
 int main()
 {
 	int status;
-	unsigned int srcBuffer = (XPAR_PS7_DDR_0_S_AXI_BASEADDR + 0x100000);
+	
 
 	myTpg    tpgInst;
 	XAxiVdma vdmaInst;
@@ -26,12 +26,27 @@ int main()
 	/* Start continuous VDMA transfers. */
 	status = vdma_run_triple_buffer(&vdmaInst, 0, 800, 600, srcBuffer, 100, 0);
 	if(status != XST_SUCCESS) {
-		printf("Transfer of frames failed with error: %d \r\n", status);
+		printf("VDMA failed! Error: %d \r\n", status);
 		return XST_FAILURE;
 	}
 	else {
-		printf("Transfer of frames started. \r\n");
+		printf("VDMA continuous transfers started. \r\n");
 	}
+
+
+    while(1) {
+    	XV_tpg_Set_bckgndId(&tpgInst.Tpg, tpgInst.BackgroundId);
+    	printf("TPG background ID: %d \r\n", tpgInst.BackgroundId);
+    	printf("Transferring frames...\r\n\n");
+
+    	sleep(0.75);
+    	if (tpgInst.BackgroundId < 20) {
+    		tpgInst.BackgroundId++;
+    	}
+    	else {
+    		tpgInst.BackgroundId = 0;
+    	}
+    }
 
 	return 0;
 }
