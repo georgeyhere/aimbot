@@ -1,7 +1,6 @@
 
 #include "tpg_utilities.h"
 #include "vdma_api.h"
-#include "platform.h"
 
 #define TPG_DEVICEID        XPAR_V_TPG_0_DEVICE_ID
 
@@ -14,7 +13,6 @@ int main()
 	XAxiVdma vdmaInst;
 
 	/* Sanity check */
-	init_platform();
 	printf("ARM0 initialized!\r\n");
 
 	/* Initialize and enable the TPG. */

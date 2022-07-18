@@ -15,5 +15,4 @@ platform create -name {tpg_vdma_platform}\
 platform write
 platform generate -domains 
 platform active {tpg_vdma_platform}
-catch {platform remove vdma_tpg}
 platform generate
