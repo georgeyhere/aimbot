@@ -3,7 +3,7 @@
 	<name>tpg_vdma_test</name>
 	<comment>Created by Vitis v2021.2</comment>
 	<projects>
-		<project>vdma_sys_wrapper</project>
+		<project>tpg_vdma_platform</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
