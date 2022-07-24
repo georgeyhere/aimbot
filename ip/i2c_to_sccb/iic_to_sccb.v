@@ -37,7 +37,12 @@ module iic_to_sccb
     assign SIOC  = scl_t;
     assign scl_i = scl_t;
 
-    assign SIOD  = (sda_t) ? 1'bz : sda_o;
-    assign sda_i = SIOD;
+    IOBUF iofbuf_inst (
+        .O  (sda_i), // buffer output
+        .IO (SIOD),  // buffer inout port
+        .I  (sda_o), // buffer input
+        .T  (sda_t)  // tristate enable 
+    );
+
 
 endmodule 
