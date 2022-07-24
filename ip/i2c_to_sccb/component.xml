@@ -78,7 +78,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4a43a122</spirit:value>
+            <spirit:value>bdceabb3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -94,7 +94,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>4a43a122</spirit:value>
+            <spirit:value>bdceabb3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -117,7 +117,7 @@
       <spirit:port>
         <spirit:name>SIOC</spirit:name>
         <spirit:wire>
-          <spirit:direction>inout</spirit:direction>
+          <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>wire</spirit:typeName>
@@ -226,7 +226,7 @@
       <spirit:file>
         <spirit:name>iic_to_sccb.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4a43a122</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_bdceabb3</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -283,12 +283,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>iic_to_sccb_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:xpmLibraries>
-        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
-        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
-      </xilinx:xpmLibraries>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-07-09T20:19:30Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-07-24T21:49:55Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="nopcore"/>
         <xilinx:tag xilinx:name="ui.data.coregen.df@66ad94d2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
@@ -297,13 +293,28 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@3de4567a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@43d02c19_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@288588b1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c58dc43_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6be54643_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e0efc8f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d2869db_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a773672_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c07e4f1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@281ffbf3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b5af5f7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15ed983a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36bb8425_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f5977f1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1844e527_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@736ea81d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@551c937d_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3543c050_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/i2c_to_sccb</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2_AR000033086</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9e6e329c"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="83da5a1c"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="8711227c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fc10ea0a"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="cf894f9f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="bb5b1c66"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
