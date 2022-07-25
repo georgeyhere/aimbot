@@ -199,7 +199,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_RST.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -221,7 +221,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_BUSIF</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.ASSOCIATED_BUSIF">S00_AXI:m_axis_video</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ASSOCIATED_RESET</spirit:name>
@@ -279,28 +279,6 @@
         </spirit:portMap>
       </spirit:portMaps>
     </spirit:busInterface>
-    <spirit:busInterface>
-      <spirit:name>i_pclk</spirit:name>
-      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
-      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
-      <spirit:slave/>
-      <spirit:portMaps>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>CLK</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>i_pclk</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-      </spirit:portMaps>
-      <spirit:parameters>
-        <spirit:parameter>
-          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.I_PCLK.ASSOCIATED_BUSIF">m_axis_video</spirit:value>
-        </spirit:parameter>
-      </spirit:parameters>
-    </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:memoryMaps>
     <spirit:memoryMap>
@@ -338,7 +316,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8781da9e</spirit:value>
+            <spirit:value>50ea5231</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -354,7 +332,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8781da9e</spirit:value>
+            <spirit:value>50ea5231</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -868,7 +846,7 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -1035,8 +1013,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ov7670_capture_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-07-10T22:02:26Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-07-25T01:17:13Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.df@58cec39e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@3dc8536a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
@@ -1216,13 +1194,82 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@3e42cf40_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@3b051ea1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2b014d5e_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41712cad_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45ba09c6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bd65208_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b372a90_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f34a544_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@216ce1a0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2306f1e5_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49bfcdc5_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20e0d13a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4639b8ad_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@569710a4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7dc82174_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@eb00bfe_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e77b9c0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d5e66c1_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55f4036_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c227592_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67e95be_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@332602_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e08ca99_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43ef62b6_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1961aca3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14da49e3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15e79bed_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f0d8cba_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78375286_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39cbf857_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67887659_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@523151ac_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@260aada3_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71201321_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@741af9f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@962af99_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b3669fe_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b1893b9_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@316e9b32_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b2fb5ae_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@490fcf6f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b62aced_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a164911_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44b1ce87_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2360bc36_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d2e5d26_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25ab1e7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4557f286_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bc26734_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d474ab2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49f50fcd_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78ae923a_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5aa239cc_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55954634_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c9778a4_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f8b0094_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@767f8e81_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66b0d40c_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6127741_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@73772189_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25fde934_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@aa67bdf_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6723b013_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dbce6c7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31b165c2_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60b10be0_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57d2f7f8_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67b0bcbb_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57acbdde_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d48184f_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@898dda7_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@447213f9_ARCHIVE_LOCATION">c:/Users/george/Documents/GitHub/aimbot/ip/ov7670_capture_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2_AR000033086</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0093d193"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e722ab54"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="df3b153e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8c9ee905"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="0601c37f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b96395fa"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="7a17724f"/>

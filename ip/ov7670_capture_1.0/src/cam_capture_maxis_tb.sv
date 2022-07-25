@@ -1,13 +1,15 @@
 module cam_capture_maxis_tb();
 
 // TEST PARAMETERS
-    parameter T_PCLK = 40;  // simulated pixel clock period 
-    parameter X_RES  = 64;  // number of pixels per row 
-    parameter Y_RES  = 3;   // number of rows per frame 
+    parameter T_PCLK   = 40;  // simulated pixel clock period 
+    parameter T_SYSCLK = 8;
+    parameter X_RES    = 64;  // number of pixels per row 
+    parameter Y_RES    = 3;   // number of rows per frame 
 
     parameter TEST_RUNS = 3; // number of test frames to generate 
  
 // LOCAL LOGIC
+    logic        i_sysclk;
     logic        i_resetn;
     logic        i_enable;
     logic        i_pclk;
@@ -25,6 +27,7 @@ module cam_capture_maxis_tb();
     #(.X_RES(X_RES),
       .Y_RES(Y_RES))
     DUT (
+    .i_sysclk (i_sysclk),
     .i_resetn (i_resetn),
     .i_enable (i_enable),
     .i_pclk   (i_pclk),
@@ -41,6 +44,9 @@ module cam_capture_maxis_tb();
 // CLOCK GEN
     initial i_pclk = 0;
     always#(T_PCLK/2) i_pclk = !i_pclk;
+
+    initial i_sysclk = 0;
+    always#(T_SYSCLK/2) i_sysclk = !i_sysclk;
 
 // SIM STRUCT
     typedef struct {
@@ -100,7 +106,7 @@ module cam_capture_maxis_tb();
     endtask : sendRow 
 
 // Process to continuously register data out from the DUT.
-    always@(posedge i_pclk) begin 
+    always@(posedge i_sysclk) begin 
         if(!i_resetn) begin 
             capInst.queue.delete();
         end 
@@ -118,6 +124,8 @@ module cam_capture_maxis_tb();
             end 
             else begin 
                 $display("FAIL! Mismatch at [%d] | Camera sent: %h  |  DUT Captured: %h", i, camInst.queue[i], capInst.queue[i]);
+                $display("Time: %t\n", $realtime);
+                repeat(2) @(posedge i_sysclk);
                 $stop();
             end
         end 
@@ -155,7 +163,7 @@ module cam_capture_maxis_tb();
         #100;
         i_resetn = 1;
         i_enable = 1;
-        repeat(3) @(negedge i_pclk);  
+        repeat(3) @(negedge i_sysclk);  
 
         //
         for(int i=0; i<TEST_RUNS; i++) begin 
@@ -163,6 +171,7 @@ module cam_capture_maxis_tb();
         end 
         //
         #100;
+        $display("\nAll tests passsed!\n");
         $stop;
     end 
 

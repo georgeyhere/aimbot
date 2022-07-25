@@ -412,6 +412,7 @@
     #(.X_RES(X_RES),
       .Y_RES(Y_RES))
     capture_i (
+        .i_sysclk (S_AXI_ACLK),
         .i_resetn (S_AXI_ARESETN),
         .i_enable (slv_reg0[0]),
 
