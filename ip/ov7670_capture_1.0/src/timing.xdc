@@ -1,1 +1,1 @@
-create_clock -period 5.000 -name S_AXI_ACLK -waveform {0.000 2.500} [get_ports s00_axi_aclk]
+create_clock -period 41.67 -name PCLK -waveform {0.000 21.34} [get_ports i_pclk]
