@@ -1,1 +1,1 @@
-create_clock -period 41.67 -name PCLK -waveform {0.000 21.34} [get_ports i_pclk]
+#create_clock -period 41.67 -name PCLK -waveform {0.000 21.34} [get_ports i_pclk]
