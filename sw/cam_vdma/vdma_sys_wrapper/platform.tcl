@@ -19,3 +19,5 @@ platform active {vdma_sys_wrapper}
 domain active {zynq_fsbl}
 domain active {standalone_ps7_cortexa9_0}
 platform generate -quick
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate
