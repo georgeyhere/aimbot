@@ -23,3 +23,8 @@
 
 /sw/tpg_vdma/demo_application
 /sw/tpg_vdma/demo_application_system
+
+/sw/cam_vdma/.metadata
+/sw/cam_vdma/RemoteSystemsTempFiles
+/sw/cam_vdma/.analytics
+/sw/cam_vdma/IDE.log

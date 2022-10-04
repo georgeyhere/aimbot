@@ -1,0 +1,1423 @@
+TRACE::2022-10-03.18:31:22::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:22::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:22::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:22::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:22::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:22::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:22::SCWPlatform::Do not have an existing db opened. 
+TRACE::2022-10-03.18:31:23::SCWPlatform::Opened new HwDB with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2022-10-03.18:31:23::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper"
+		}]
+}
+TRACE::2022-10-03.18:31:23::SCWPlatform::Boot application domains not present, creating them
+TRACE::2022-10-03.18:31:23::SCWDomain::checking for install qemu data   : 
+TRACE::2022-10-03.18:31:23::SCWDomain:: Using the QEMU Data from install at  : /tools/Xilinx/Vitis/2022.1/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-10-03.18:31:23::SCWDomain:: Using the QEMU args  from install at  : /tools/Xilinx/Vitis/2022.1/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:23::SCWPlatform::Boot application domain added for zynq_fsbl
+TRACE::2022-10-03.18:31:23::SCWPlatform::Generating the sources  .
+TRACE::2022-10-03.18:31:23::SCWBDomain::Generating boot domain sources.
+TRACE::2022-10-03.18:31:23::SCWBDomain:: Generating the zynq_fsbl Application.
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:23::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:23::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-10-03.18:31:23::SCWMssOS::No sw design opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::mss does not exists at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::Creating sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::Adding the swdes entry, created swdb /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::updating the scw layer changes to swdes at   /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::Writing mss at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:23::SCWMssOS::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp
+TRACE::2022-10-03.18:31:23::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2022-10-03.18:31:23::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2022-10-03.18:31:23::SCWBDomain::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp
+TRACE::2022-10-03.18:31:27::SCWPlatform::Generating sources Done.
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2022-10-03.18:31:27::SCWMssOS::No sw design opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::mss exists loading the mss file  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Opened the sw design from mss  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Adding the swdes entry /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss with des name system
+TRACE::2022-10-03.18:31:27::SCWMssOS::updating the scw layer about changes
+TRACE::2022-10-03.18:31:27::SCWMssOS::Opened the sw design.  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:27::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:27::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"zynq_fsbl",
+			"sysDefaultDom":	"",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-10-03.18:31:27::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:27::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:27::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"zynq_fsbl",
+			"sysDefaultDom":	"",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWDomain::checking for install qemu data   : 
+TRACE::2022-10-03.18:31:27::SCWDomain:: Using the QEMU Data from install at  : /tools/Xilinx/Vitis/2022.1/data/emulation/platforms/zynq/sw/a9_standalone/qemu/
+TRACE::2022-10-03.18:31:27::SCWDomain:: Using the QEMU args  from install at  : /tools/Xilinx/Vitis/2022.1/data/emulation/platforms/zynq/sw/a9_standalone/qemu/qemu_args.txt
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWDomain::Qemu Directory name is changed from "" to "qemu"
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:27::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:27::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:27::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:27::SCWMssOS::No sw design opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::mss does not exists at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Creating sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Adding the swdes entry, created swdb /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss with des name /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::updating the scw layer changes to swdes at   /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Writing mss at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:27::SCWMssOS::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+TRACE::2022-10-03.18:31:27::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2022-10-03.18:31:28::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+TRACE::2022-10-03.18:31:28::SCWMssOS::Forcing BSP Sources regeneration.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Adding the swdes entry, mss present, able to open swdb /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss with des name system_0
+TRACE::2022-10-03.18:31:28::SCWMssOS::Writing the mss file completed /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"standalone_ps7_cortexa9_0",
+			"sysDefaultDom":	"standalone_ps7_cortexa9_0",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_ps7_cortexa9_0",
+					"domainDispName":	"standalone_ps7_cortexa9_0",
+					"domainDesc":	"standalone_ps7_cortexa9_0",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"5670488eeb7424e537226d7dd110b07c",
+					"compatibleApp":	"hello_world",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2022-10-03.18:31:28::SCWPlatform::Started generating the artifacts platform vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWPlatform::Sanity checking of platform is completed
+LOG::2022-10-03.18:31:28::SCWPlatform::Started generating the artifacts for system configuration vdma_sys_wrapper
+LOG::2022-10-03.18:31:28::SCWSystem::Checking the domain zynq_fsbl
+LOG::2022-10-03.18:31:28::SCWSystem::Doing application build for :  zynq_fsbl
+TRACE::2022-10-03.18:31:28::SCWBDomain::Not a forced makefile updation, No changes are present. 
+TRACE::2022-10-03.18:31:28::SCWDomain::Skipping the build for domain :  zynq_fsbl
+LOG::2022-10-03.18:31:28::SCWSystem::Checking the domain standalone_ps7_cortexa9_0
+LOG::2022-10-03.18:31:28::SCWSystem::Not a boot domain 
+LOG::2022-10-03.18:31:28::SCWSystem::Started Processing the domain standalone_ps7_cortexa9_0
+TRACE::2022-10-03.18:31:28::SCWDomain::Generating domain artifcats
+TRACE::2022-10-03.18:31:28::SCWMssOS::Generating standalone artifcats
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying the qemu file from  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt To /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/export/vdma_sys_wrapper/sw/vdma_sys_wrapper/qemu/
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying the qemu file from  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt To /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/export/vdma_sys_wrapper/sw/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu/
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Copying the user libraries. 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+TRACE::2022-10-03.18:31:28::SCWMssOS::Mss edits present, copying mssfile into export location /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-10-03.18:31:28::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2022-10-03.18:31:28::SCWDomain::Skipping the build for domain :  standalone_ps7_cortexa9_0
+TRACE::2022-10-03.18:31:28::SCWMssOS::skipping the bsp build ... 
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying to export directory.
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2022-10-03.18:31:28::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Completed Standalone Artifacts creation 
+LOG::2022-10-03.18:31:28::SCWSystem::Completed Processing the domain standalone_ps7_cortexa9_0
+LOG::2022-10-03.18:31:28::SCWSystem::Completed Processing the sysconfig vdma_sys_wrapper
+LOG::2022-10-03.18:31:28::SCWPlatform::Completed generating the artifacts for system configuration vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started preparing the platform 
+TRACE::2022-10-03.18:31:28::SCWSystem::Writing the bif file for system config vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWSystem::dir created 
+TRACE::2022-10-03.18:31:28::SCWSystem::Writing the bif 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started writing the spfm file 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started writing the xpfm file 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Completed generating the platform
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"standalone_ps7_cortexa9_0",
+			"sysDefaultDom":	"standalone_ps7_cortexa9_0",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_ps7_cortexa9_0",
+					"domainDispName":	"standalone_ps7_cortexa9_0",
+					"domainDesc":	"standalone_ps7_cortexa9_0",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"5670488eeb7424e537226d7dd110b07c",
+					"compatibleApp":	"hello_world",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2022-10-03.18:31:28::SCWPlatform::updated the xpfm file.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"standalone_ps7_cortexa9_0",
+			"sysDefaultDom":	"standalone_ps7_cortexa9_0",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_ps7_cortexa9_0",
+					"domainDispName":	"standalone_ps7_cortexa9_0",
+					"domainDesc":	"standalone_ps7_cortexa9_0",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"5670488eeb7424e537226d7dd110b07c",
+					"compatibleApp":	"hello_world",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"standalone_ps7_cortexa9_0",
+			"sysDefaultDom":	"standalone_ps7_cortexa9_0",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_ps7_cortexa9_0",
+					"domainDispName":	"standalone_ps7_cortexa9_0",
+					"domainDesc":	"standalone_ps7_cortexa9_0",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"5670488eeb7424e537226d7dd110b07c",
+					"compatibleApp":	"hello_world",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2022-10-03.18:31:28::SCWPlatform::Started generating the artifacts platform vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWPlatform::Sanity checking of platform is completed
+LOG::2022-10-03.18:31:28::SCWPlatform::Started generating the artifacts for system configuration vdma_sys_wrapper
+LOG::2022-10-03.18:31:28::SCWSystem::Started Processing the domain standalone_ps7_cortexa9_0
+TRACE::2022-10-03.18:31:28::SCWDomain::Generating domain artifcats
+TRACE::2022-10-03.18:31:28::SCWMssOS::Generating standalone artifcats
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying the qemu file from  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt To /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/export/vdma_sys_wrapper/sw/vdma_sys_wrapper/qemu/
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying the qemu file from  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt To /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/export/vdma_sys_wrapper/sw/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu/
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Copying the user libraries. 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writing the mss file at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+TRACE::2022-10-03.18:31:28::SCWMssOS::Mss edits present, copying mssfile into export location /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2022-10-03.18:31:28::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2022-10-03.18:31:28::SCWDomain::Building the domain as part of full build :  standalone_ps7_cortexa9_0
+TRACE::2022-10-03.18:31:28::SCWMssOS::skipping the bsp build ... 
+TRACE::2022-10-03.18:31:28::SCWMssOS::Copying to export directory.
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2022-10-03.18:31:28::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+TRACE::2022-10-03.18:31:28::SCWMssOS:: Completed Standalone Artifacts creation 
+LOG::2022-10-03.18:31:28::SCWSystem::Completed Processing the domain standalone_ps7_cortexa9_0
+LOG::2022-10-03.18:31:28::SCWSystem::Completed Processing the sysconfig vdma_sys_wrapper
+LOG::2022-10-03.18:31:28::SCWPlatform::Completed generating the artifacts for system configuration vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started preparing the platform 
+TRACE::2022-10-03.18:31:28::SCWSystem::Writing the bif file for system config vdma_sys_wrapper
+TRACE::2022-10-03.18:31:28::SCWSystem::dir created 
+TRACE::2022-10-03.18:31:28::SCWSystem::Writing the bif 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started writing the spfm file 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Started writing the xpfm file 
+TRACE::2022-10-03.18:31:28::SCWPlatform::Completed generating the platform
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Saving the mss changes /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Completed writemss as part of save.
+TRACE::2022-10-03.18:31:28::SCWMssOS::Commit changes completed.
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to open the hw design at /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA given /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA absoulate path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform::DSA directory /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Platform Path /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/hw/vdma_sys_wrapper.xsa
+TRACE::2022-10-03.18:31:28::SCWPlatform:: Unique name xilinx:zybo-z7-20::0.0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Trying to set the existing hwdb with name vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Opened existing hwdb vdma_sys_wrapper_0
+TRACE::2022-10-03.18:31:28::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2022-10-03.18:31:28::SCWMssOS::Checking the sw design at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWMssOS::DEBUG:  swdes dump  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss|system_0||
+/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/zynq_fsbl/zynq_fsbl_bsp/system.mss|system||
+
+TRACE::2022-10-03.18:31:28::SCWMssOS::Sw design exists and opened at  /home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/system.mss
+TRACE::2022-10-03.18:31:28::SCWWriter::formatted JSON is {
+	"platformName":	"vdma_sys_wrapper",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"vdma_sys_wrapper",
+	"platHandOff":	"<platformDir>.xsa",
+	"platIntHandOff":	"<platformDir>/hw/vdma_sys_wrapper.xsa",
+	"deviceType":	"zynq",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"platFsblTarget":	"ps7_cortexa9_0",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"fsblExtraCompilerFlags":	"-MMD -MP       -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard ",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"vdma_sys_wrapper",
+	"systems":	[{
+			"systemName":	"vdma_sys_wrapper",
+			"systemDesc":	"vdma_sys_wrapper",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"vdma_sys_wrapper",
+			"sysActiveDom":	"standalone_ps7_cortexa9_0",
+			"sysDefaultDom":	"standalone_ps7_cortexa9_0",
+			"domains":	[{
+					"domainName":	"zynq_fsbl",
+					"domainDispName":	"zynq_fsbl",
+					"domainDesc":	"FSBL Application BSP - Auto Generated.",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"a2c9b6026f71cff9426526f82c93c055",
+					"compatibleApp":	"zynq_fsbl",
+					"domType":	"bootDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	["xilffs:4.7", "xilrsa:1.6"],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}, {
+					"domainName":	"standalone_ps7_cortexa9_0",
+					"domainDispName":	"standalone_ps7_cortexa9_0",
+					"domainDesc":	"standalone_ps7_cortexa9_0",
+					"processors":	"ps7_cortexa9_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"qemuArgs":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu_args.txt",
+					"qemuData":	"<platformDir>/resources/vdma_sys_wrapper/standalone_ps7_cortexa9_0/qemu",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"5670488eeb7424e537226d7dd110b07c",
+					"compatibleApp":	"hello_world",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2022-10-03.18:31:28::SCWPlatform::updated the xpfm file.
