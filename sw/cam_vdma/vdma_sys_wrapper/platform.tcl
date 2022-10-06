@@ -21,3 +21,10 @@ domain active {standalone_ps7_cortexa9_0}
 platform generate -quick
 platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
 platform generate
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate -domains 
+platform active {vdma_sys_wrapper}
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform clean
+platform generate
+platform generate

@@ -3,7 +3,7 @@
 
 /*************************************** INCLUDES **********************************************/
 #include <stdio.h>
-#include "iic.h"
+#include "xiicps.h"
 
 /************************************* IIC DEFINITIONS******************************************/
 
@@ -37,7 +37,7 @@
 #define OV7670_CLK_EXT 0x40                //< CLKRC Use ext clock directly
 #define OV7670_CLK_SCALE 0x3F              //< CLKRC Int clock prescale mask
 #define OV7670_REG_COM7 0x12               //< Common control 7
-#define OV7670_COM7_RESET 0x80             //< COM7 SCCB register reset
+#define OV7670_COM7_RESET 0x80             //< COM7 XIicPs register reset
 #define OV7670_COM7_SIZE_MASK 0x38         //< COM7 output size mask
 #define OV7670_COM7_PIXEL_MASK 0x05        //< COM7 output pixel format mask
 #define OV7670_COM7_SIZE_VGA 0x00          //< COM7 output size VGA
@@ -238,7 +238,8 @@ typedef struct {
     ov7670_pattern    pattern;
     ov7670_nightMode  nightMode;
 
-    XIicPs            *sccb;
+    uint8_t           address;
+    XIicPs            *iic;
 } ov7670_t;
 
 /*********************************** FUNCTION PROTOTYPES ***************************************/
@@ -247,26 +248,29 @@ typedef struct {
  * @brief Function to write an 8-bit value to an OV7670 register.
  * 
  * @param camInst is a pointer to an ov7670_t instance.
+ * @param regAddr is the register address to write to.
+ * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_writeReg(ov7670_t *camInst, ov7670_addr_data_t *data);
+int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data);
 
 /**
  * @brief Function to read an 8-bit value from an OV7670 register.
  * 
  * @param camInst is a pointer to an ov7670_t instance.
+ * @param regAddr is the register address to read from.
  * @return uint8_t register value.
  */
-uint8_t ov7670_readReg(ov7670_t *camInst);
+uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr);
 
 /**
  * @brief Function to initialize an OV7670 instance to default values.
  * 
  * @param camInst is a pointer to an ov7670_t instance.
- * @param sccbInst is a pointer to an sccb_t instance.
+ * @param iicInst is a pointer to an XIicPs instance.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_initialize(ov7670_t *camInst, XIicPs *sccbInst);
+int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst);
 
 
 

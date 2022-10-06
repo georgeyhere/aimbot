@@ -2,6 +2,8 @@
     "files.associations": {
         "*.xdc": "tcl",
         "ov7670.h": "c",
-        "xiic.h": "c"
+        "xiic.h": "c",
+        "stdio.h": "c",
+        "xiicps.h": "c"
     }
 }

@@ -134,23 +134,66 @@ static const ov7670_addr_data_t ov7670_defaultConfig [] = {
  * @brief Function to write an 8-bit value to an OV7670 register.
  * 
  * @param camInst is a pointer to an ov7670_t instance.
+ * @param regAddr is the register address to write to.
+ * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_writeReg(ov7670_t *camInst, ov7670_addr_data_t *data)
+int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
 {
     int status;
     uint8_t cmd [2];
 
-    cmd[0] = data->addr;
-    cmd[1] = data->value;
+    cmd[0] = regAddr;
+    cmd[1] = data;
 
-
+    // Send register address + data
+    status = XIicPs_MasterSendPolled(camInst->iic, cmd, 2, camInst->address);
     if(status != XST_SUCCESS) {
         return XST_FAILURE;
     }
 
-    if(status != XST_SUCCESS) {
-        return XST_FAILURE;
+    // Wait for the bus to idle before returning
+    if(!(camInst->iic->IsRepeatedStart)) {
+        while(XIicPs_BusIsBusy(camInst->iic));
     }
+
+    return XST_SUCCESS;
 }
+
+
+/**
+ * @brief Function to read an 8-bit value from an OV7670 register.
+ * 
+ * @param camInst is a pointer to an ov7670_t instance.
+ * @return uint8_t register value.
+ */
+uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr)
+{
+    int status;
+    uint8_t recv = 0;
+
+    // Set repeated start
+    XIicPs_SetOptions(camInst->iic, XIICPS_REP_START_OPTION);
+
+    // Send register address
+    status = XIicPs_MasterSendPolled(camInst->iic, &regAddr, 1, camInst->address);
+    if(status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    // Disable repeated start if it is enabled
+    XIicPs_ClearOptions(camInst->iic, XIICPS_REP_START_OPTION);
+
+    // Read a byte
+    XIicPs_MasterRecvPolled(camInst->iic, &recv, 1, camInst->address);
+    if(status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    // Wait for bus to idle before returning
+    while(XIicPs_BusIsBusy(camInst->iic));
+
+    return recv;
+}
+
 
