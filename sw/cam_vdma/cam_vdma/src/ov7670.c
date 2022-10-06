@@ -2,7 +2,7 @@
 
 
 // Struct for default camera register values
-static const ov7670_addr_data_t ov7670_defaultConfig [] = {
+static const ov7670_addr_data_t ov7670_defaultCfg [] = {
 
     // Set RGB565, 0-255 Output Range
     {OV7670_REG_COM7, OV7670_COM7_RGB},
@@ -160,7 +160,6 @@ int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
     return XST_SUCCESS;
 }
 
-
 /**
  * @brief Function to read an 8-bit value from an OV7670 register.
  * 
@@ -196,4 +195,30 @@ uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr)
     return recv;
 }
 
+/**
+ * @brief Function to initialize an OV7670 instance to default values.
+ * 
+ * @param camInst is a pointer to an ov7670_t instance.
+ * @param iicInst is a pointer to an XIicPs instance.
+ * @param addr is the IIC address of the ov7670.
+ * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
+ */
+int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr)
+{
+    int status;
 
+    // Setup the struct
+    camInst->address = addr;
+    camInst->iic = iicInst;
+
+    // Write all register config values in ov7670_defaultCfg to ov7670
+    for(int i=0; ov7670_defaultCfg[i].addr <= OV7670_REG_LAST; i++) 
+    {
+        status = ov7670_writeReg(camInst, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
+        if(status != XST_SUCCESS) {
+            return XST_FAILURE;
+        }
+    }    
+
+    return XST_SUCCESS;
+}

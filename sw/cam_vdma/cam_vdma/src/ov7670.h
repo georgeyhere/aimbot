@@ -268,9 +268,10 @@ uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr);
  * 
  * @param camInst is a pointer to an ov7670_t instance.
  * @param iicInst is a pointer to an XIicPs instance.
+ * @param addr is the IIC address of the ov7670.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst);
+int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr);
 
 
 
