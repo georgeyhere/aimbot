@@ -138,7 +138,7 @@ static const ov7670_addr_data_t ov7670_defaultCfg [] = {
  * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
+int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
 {
     int status;
     uint8_t cmd [2];
@@ -166,7 +166,7 @@ int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
  * @param camInst is a pointer to an ov7670_t instance.
  * @return uint8_t register value.
  */
-uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr)
+uint8_t ov7670_read_reg(ov7670_t *camInst, uint8_t regAddr)
 {
     int status;
     uint8_t recv = 0;
@@ -206,6 +206,7 @@ uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr)
 int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr)
 {
     int status;
+    uint8_t regVal;
 
     // Setup the struct
     camInst->address = addr;
@@ -214,11 +215,20 @@ int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr)
     // Write all register config values in ov7670_defaultCfg to ov7670
     for(int i=0; ov7670_defaultCfg[i].addr <= OV7670_REG_LAST; i++) 
     {
-        status = ov7670_writeReg(camInst, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
+        status = ov7670_write_reg(camInst, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
         if(status != XST_SUCCESS) {
             return XST_FAILURE;
         }
     }    
+
+    // Read back all register config values and compare against expected
+    for(int i=0; ov7670_defaultCfg[i].addr <= OV7670_REG_LAST; i++) 
+    {
+        regVal = ov7670_read_reg(camInst, ov7670_defaultCfg[i].addr);
+        if(regVal != ov7670_defaultCfg[i].value) {
+            return XST_FAILURE;
+        }
+    }
 
     return XST_SUCCESS;
 }
