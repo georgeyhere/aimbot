@@ -242,6 +242,14 @@ typedef struct {
 } ov7670_t;
 
 /*********************************** FUNCTION PROTOTYPES ***************************************/
+/**
+ * @brief Function to configure an ov7670_t instance with an XiicPs instance.
+ *
+ * @param camInstPtr is a pointer to an ov7670_t instance.
+ * @param IicInstancePtr is a pointer to an XiicPs instance.
+ * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
+ */
+int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t device_id, uint32_t sclk_rate);
 
 /**
  * @brief Function to write an 8-bit value to an OV7670 register.
@@ -251,7 +259,7 @@ typedef struct {
  * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data);
+int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data);
 
 /**
  * @brief Function to read an 8-bit value from an OV7670 register.
@@ -260,7 +268,7 @@ int ov7670_writeReg(ov7670_t *camInst, uint8_t regAddr, uint8_t data);
  * @param regAddr is the register address to read from.
  * @return uint8_t register value.
  */
-uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr);
+uint8_t ov7670_read_reg(ov7670_t *camInst, uint8_t regAddr);
 
 /**
  * @brief Function to initialize an OV7670 instance to default values.
@@ -270,7 +278,7 @@ uint8_t ov7670_readReg(ov7670_t *camInst, uint8_t regAddr);
  * @param addr is the IIC address of the ov7670.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr);
+int ov7670_cfg_initialize(ov7670_t *camInst);
 
 
 

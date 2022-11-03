@@ -8,7 +8,6 @@ int main()
 {
 	int status;
 	
-
 	myTpg    tpgInst;
 	XAxiVdma vdmaInst;
 

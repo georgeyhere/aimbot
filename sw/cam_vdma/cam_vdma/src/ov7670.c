@@ -1,6 +1,5 @@
 #include "ov7670.h"
 
-
 // Struct for default camera register values
 static const ov7670_addr_data_t ov7670_defaultCfg [] = {
 
@@ -130,15 +129,49 @@ static const ov7670_addr_data_t ov7670_defaultCfg [] = {
 
 /*************************************** FUNCTIONS *********************************************/
 
+
+/**
+ * @brief Function to configure an ov7670_t instance with an XiicPs instance.
+ *
+ * @param camInstPtr is a pointer to an ov7670_t instance.
+ * @param IicInstancePtr is a pointer to an XiicPs instance.
+ * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
+ */
+int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t device_id, uint32_t sclk_rate)
+{
+    XIicPs_Config *ConfigPtr;
+    int status;
+
+    if(IicInstancePtr == NULL) return XST_FAILURE;
+    else camInstPtr->iic = IicInstancePtr;
+
+    camInstPtr->address = OV7670_ADDR;
+
+    ConfigPtr = XIicPs_LookupConfig(device_id);
+    if(ConfigPtr == NULL) {
+        return XST_FAILURE;
+    }
+
+    status = XIicPs_CfgInitialize(IicInstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+    if(status != XST_SUCCESS) {
+        return XST_FAILURE;    
+    }
+
+    XIicPs_SetSClk(IicInstancePtr, sclk_rate);
+
+    return XST_SUCCESS;
+}
+
+
 /**
  * @brief Function to write an 8-bit value to an OV7670 register.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param regAddr is the register address to write to.
  * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
+int ov7670_write_reg(ov7670_t* camInstPtr, uint8_t regAddr, uint8_t data)
 {
     int status;
     uint8_t cmd [2];
@@ -147,14 +180,14 @@ int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
     cmd[1] = data;
 
     // Send register address + data
-    status = XIicPs_MasterSendPolled(camInst->iic, cmd, 2, camInst->address);
+    status = XIicPs_MasterSendPolled(camInstPtr->iic, cmd, 2, camInstPtr->address);
     if(status != XST_SUCCESS) {
         return XST_FAILURE;
     }
 
     // Wait for the bus to idle before returning
-    if(!(camInst->iic->IsRepeatedStart)) {
-        while(XIicPs_BusIsBusy(camInst->iic));
+    if(!(camInstPtr->iic->IsRepeatedStart)) {
+        while(XIicPs_BusIsBusy(camInstPtr->iic));
     }
 
     return XST_SUCCESS;
@@ -163,34 +196,34 @@ int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data)
 /**
  * @brief Function to read an 8-bit value from an OV7670 register.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @return uint8_t register value.
  */
-uint8_t ov7670_read_reg(ov7670_t *camInst, uint8_t regAddr)
+uint8_t ov7670_read_reg(ov7670_t* camInstPtr, uint8_t regAddr)
 {
     int status;
     uint8_t recv = 0;
 
     // Set repeated start
-    XIicPs_SetOptions(camInst->iic, XIICPS_REP_START_OPTION);
+    XIicPs_SetOptions(camInstPtr->iic, XIICPS_REP_START_OPTION);
 
     // Send register address
-    status = XIicPs_MasterSendPolled(camInst->iic, &regAddr, 1, camInst->address);
+    status = XIicPs_MasterSendPolled(camInstPtr->iic, &regAddr, 1, camInstPtr->address);
     if(status != XST_SUCCESS) {
         return XST_FAILURE;
     }
 
     // Disable repeated start if it is enabled
-    XIicPs_ClearOptions(camInst->iic, XIICPS_REP_START_OPTION);
+    XIicPs_ClearOptions(camInstPtr->iic, XIICPS_REP_START_OPTION);
 
     // Read a byte
-    XIicPs_MasterRecvPolled(camInst->iic, &recv, 1, camInst->address);
+    XIicPs_MasterRecvPolled(camInstPtr->iic, &recv, 1, camInstPtr->address);
     if(status != XST_SUCCESS) {
         return XST_FAILURE;
     }
 
     // Wait for bus to idle before returning
-    while(XIicPs_BusIsBusy(camInst->iic));
+    while(XIicPs_BusIsBusy(camInstPtr->iic));
 
     return recv;
 }
@@ -198,24 +231,20 @@ uint8_t ov7670_read_reg(ov7670_t *camInst, uint8_t regAddr)
 /**
  * @brief Function to initialize an OV7670 instance to default values.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param iicInst is a pointer to an XIicPs instance.
  * @param addr is the IIC address of the ov7670.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr)
+int ov7670_cfg_initialize(ov7670_t* camInstPtr)
 {
     int status;
     uint8_t regVal;
 
-    // Setup the struct
-    camInst->address = addr;
-    camInst->iic = iicInst;
-
     // Write all register config values in ov7670_defaultCfg to ov7670
     for(int i=0; ov7670_defaultCfg[i].addr <= OV7670_REG_LAST; i++) 
     {
-        status = ov7670_write_reg(camInst, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
+        status = ov7670_write_reg(camInstPtr, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
         if(status != XST_SUCCESS) {
             return XST_FAILURE;
         }
@@ -224,11 +253,11 @@ int ov7670_initialize(ov7670_t *camInst, XIicPs *iicInst, uint8_t addr)
     // Read back all register config values and compare against expected
     for(int i=0; ov7670_defaultCfg[i].addr <= OV7670_REG_LAST; i++) 
     {
-        regVal = ov7670_read_reg(camInst, ov7670_defaultCfg[i].addr);
+        regVal = ov7670_read_reg(camInstPtr, ov7670_defaultCfg[i].addr);
         if(regVal != ov7670_defaultCfg[i].value) {
             return XST_FAILURE;
         }
     }
 
-    return XST_SUCCESS;
+   return XST_SUCCESS;
 }

@@ -6,9 +6,14 @@
 int main()
 {
     init_platform();
+    printf("Device Initialized!\r\n");
 
-    print("Hello World\n\r");
-    print("Successfully ran Hello World application");
+    setup();
+
+    while(1){
+        
+    }
+
     cleanup_platform();
     return 0;
 }

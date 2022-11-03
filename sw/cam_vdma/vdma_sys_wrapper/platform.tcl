@@ -28,3 +28,4 @@ platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrappe
 platform clean
 platform generate
 platform generate
+platform generate
