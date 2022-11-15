@@ -5,7 +5,7 @@ module cam_capture_maxis
       parameter Y_RES = 480 )
     (
     input  logic        i_resetn, // async active-low reset
-    input  logic        i_enable,
+    input  logic        i_enable, 
  
     // OV7670 interface  
     input  logic        i_pclk,   // pixel clock 
