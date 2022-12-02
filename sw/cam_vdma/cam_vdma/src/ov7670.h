@@ -4,6 +4,10 @@
 /*************************************** INCLUDES **********************************************/
 #include <stdio.h>
 #include "xiicps.h"
+#include "sleep.h"
+
+/*************************************** CONTROLS **********************************************/
+#define OV7670_DEBUG
 
 /************************************* IIC DEFINITIONS******************************************/
 
@@ -246,7 +250,10 @@ typedef struct {
  * @brief Function to configure an ov7670_t instance with an XiicPs instance.
  *
  * @param camInstPtr is a pointer to an ov7670_t instance.
- * @param IicInstancePtr is a pointer to an XiicPs instance.
+ * @param IicInstancePtr is a pointer to an XIicPs instance.
+ * @param device_id is the device ID of the XIicPs.
+ * @param sclk_rate is the desired frequency of the IIC SCLK.
+ *
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
 int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t device_id, uint32_t sclk_rate);
@@ -254,31 +261,38 @@ int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t
 /**
  * @brief Function to write an 8-bit value to an OV7670 register.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param regAddr is the register address to write to.
  * @param data is the data to write to the specified register address.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_write_reg(ov7670_t *camInst, uint8_t regAddr, uint8_t data);
+int ov7670_write_reg(ov7670_t* camInstPtr, uint8_t regAddr, uint8_t data);
 
 /**
  * @brief Function to read an 8-bit value from an OV7670 register.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param regAddr is the register address to read from.
  * @return uint8_t register value.
  */
-uint8_t ov7670_read_reg(ov7670_t *camInst, uint8_t regAddr);
+uint8_t ov7670_read_reg(ov7670_t* camInstPtr, uint8_t regAddr);
+
+
+/**
+ * @brief Function to read the product ID of an OV7670.
+ *
+ * @param camInstPtr is a pointer to an ov7670_t instance.
+ */
+uint16_t ov7670_get_id(ov7670_t* camInstPtr);
 
 /**
  * @brief Function to initialize an OV7670 instance to default values.
  * 
- * @param camInst is a pointer to an ov7670_t instance.
- * @param iicInst is a pointer to an XIicPs instance.
+ * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param addr is the IIC address of the ov7670.
  * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
  */
-int ov7670_cfg_initialize(ov7670_t *camInst);
+int ov7670_cfg_initialize(ov7670_t* camInst);
 
 
 

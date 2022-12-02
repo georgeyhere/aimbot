@@ -6,7 +6,7 @@
 int main()
 {
     init_platform();
-    printf("Device Initialized!\r\n");
+    printf("\r\nDevice Initialized!\r\n");
 
     setup();
 

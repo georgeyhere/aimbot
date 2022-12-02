@@ -1,5 +1,20 @@
-
-
+// cam_capture_maxis.sv
+//
+// Module to capture RGB565 data from an OV7670 camera.
+// Source synchronous to camera pixel clock; no CDC solution provided.
+// Doesn't provide any means to handle back pressure either.
+// Video frame SoF and EoL flags are included by means of TUSER and TLAST
+// respectively and can be used for frame synchronization downstream.
+//
+// Recommend using with an AXIS FIFO.
+//
+// Output Format: M_AXIS_VIDEO_TDATA [15:0]
+//   ------------------------------------
+//  |  [15:11]  |   [10:5]   |   [4:0]   |
+//  |    Red    |   Green    |   Blue    | 
+//   ------------------------------------
+//
+//
 module cam_capture_maxis
     #(parameter X_RES = 640,
       parameter Y_RES = 480 )
@@ -25,7 +40,6 @@ module cam_capture_maxis
     typedef enum {
         ST_IDLE, ST_ACTIVE
     } fsm_state_encoding;
-
     fsm_state_encoding STATE;
 
     logic [$clog2(X_RES)-1 :0] pixel_count;

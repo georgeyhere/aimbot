@@ -114,6 +114,7 @@ set_property -dict {PACKAGE_PIN B19 IOSTANDARD TMDS_33} [get_ports {TMDS_0_data_
 ##Pmod Header JB (Zybo Z7-20 only)
 set_property -dict {PACKAGE_PIN V8 IOSTANDARD LVCMOS33} [get_ports CAM_SIOC]
 set_property -dict {PACKAGE_PIN W8 IOSTANDARD LVCMOS33} [get_ports CAM_SIOD]
+set_property PULLUP TRUE [get_ports CAM_SIOD]
 #set_property -dict { PACKAGE_PIN U7    IOSTANDARD LVCMOS33     } [get_ports { jb[2] }]; #IO_L11P_T1_SRCC_13 Sch=jb_p[2]
 #set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33     } [get_ports { jb[3] }]; #IO_L11N_T1_SRCC_13 Sch=jb_n[2]
 set_property -dict {PACKAGE_PIN Y7 IOSTANDARD LVCMOS33} [get_ports CAM_PCLK]

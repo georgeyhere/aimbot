@@ -129,7 +129,6 @@ static const ov7670_addr_data_t ov7670_defaultCfg [] = {
 
 /*************************************** FUNCTIONS *********************************************/
 
-
 /**
  * @brief Function to configure an ov7670_t instance with an XiicPs instance.
  *
@@ -141,9 +140,6 @@ int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t
 {
     XIicPs_Config *ConfigPtr;
     int status;
-
-    if(IicInstancePtr == NULL) return XST_FAILURE;
-    else camInstPtr->iic = IicInstancePtr;
 
     camInstPtr->address = OV7670_ADDR;
 
@@ -157,6 +153,12 @@ int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t
         return XST_FAILURE;    
     }
 
+    status = XIicPs_SelfTest(IicInstancePtr);
+    if(status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    camInstPtr->iic = IicInstancePtr;
     XIicPs_SetSClk(IicInstancePtr, sclk_rate);
 
     return XST_SUCCESS;
@@ -169,11 +171,11 @@ int ov7670_iic_initialize(ov7670_t* camInstPtr, XIicPs* IicInstancePtr, uint16_t
  * @param camInstPtr is a pointer to an ov7670_t instance.
  * @param regAddr is the register address to write to.
  * @param data is the data to write to the specified register address.
- * @return int OV7670_STATUS_OK if successful, else OV7670_STATUS_ERROR
+ * @return int XST_SUCCESS if successful, else XST_FAILURE
  */
 int ov7670_write_reg(ov7670_t* camInstPtr, uint8_t regAddr, uint8_t data)
 {
-    int status;
+    int status = 0;
     uint8_t cmd [2];
 
     cmd[0] = regAddr;
@@ -182,13 +184,12 @@ int ov7670_write_reg(ov7670_t* camInstPtr, uint8_t regAddr, uint8_t data)
     // Send register address + data
     status = XIicPs_MasterSendPolled(camInstPtr->iic, cmd, 2, camInstPtr->address);
     if(status != XST_SUCCESS) {
+    	printf("OV7670 Register Write failed! Error Code: %d\r\n", status);
         return XST_FAILURE;
     }
 
     // Wait for the bus to idle before returning
-    if(!(camInstPtr->iic->IsRepeatedStart)) {
-        while(XIicPs_BusIsBusy(camInstPtr->iic));
-    }
+    while(XIicPs_BusIsBusy(camInstPtr->iic));
 
     return XST_SUCCESS;
 }
@@ -204,28 +205,27 @@ uint8_t ov7670_read_reg(ov7670_t* camInstPtr, uint8_t regAddr)
     int status;
     uint8_t recv = 0;
 
-    // Set repeated start
-    XIicPs_SetOptions(camInstPtr->iic, XIICPS_REP_START_OPTION);
-
-    // Send register address
-    status = XIicPs_MasterSendPolled(camInstPtr->iic, &regAddr, 1, camInstPtr->address);
-    if(status != XST_SUCCESS) {
-        return XST_FAILURE;
-    }
-
-    // Disable repeated start if it is enabled
-    XIicPs_ClearOptions(camInstPtr->iic, XIICPS_REP_START_OPTION);
-
-    // Read a byte
+    XIicPs_MasterSendPolled(camInstPtr->iic, &regAddr, 1, camInstPtr->address);
     XIicPs_MasterRecvPolled(camInstPtr->iic, &recv, 1, camInstPtr->address);
-    if(status != XST_SUCCESS) {
-        return XST_FAILURE;
-    }
 
     // Wait for bus to idle before returning
     while(XIicPs_BusIsBusy(camInstPtr->iic));
 
     return recv;
+}
+
+uint16_t ov7670_get_id(ov7670_t* camInstPtr)
+{
+    uint16_t id;
+    uint8_t  rdata;
+
+    rdata = ov7670_read_reg(camInstPtr, OV7670_REG_PID);
+    id = rdata << 8;
+
+    rdata = ov7670_read_reg(camInstPtr, OV7670_REG_VER);
+    id += rdata;
+
+    return id;
 }
 
 /**
@@ -246,6 +246,7 @@ int ov7670_cfg_initialize(ov7670_t* camInstPtr)
     {
         status = ov7670_write_reg(camInstPtr, ov7670_defaultCfg[i].addr, ov7670_defaultCfg[i].value);
         if(status != XST_SUCCESS) {
+        	printf("OV7670 Register Write failed: %d\r\n", i);
             return XST_FAILURE;
         }
     }    
@@ -255,6 +256,9 @@ int ov7670_cfg_initialize(ov7670_t* camInstPtr)
     {
         regVal = ov7670_read_reg(camInstPtr, ov7670_defaultCfg[i].addr);
         if(regVal != ov7670_defaultCfg[i].value) {
+        	printf("OV7670 Config Check failed: %d\r\n\n", i);
+        	printf("Address: 0x%x\r\n", ov7670_defaultCfg[i].addr);
+        	printf("Expected: 0x%x | Actual: 0x%x\r\n\n", ov7670_defaultCfg[i].value, regVal);
             return XST_FAILURE;
         }
     }

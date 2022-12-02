@@ -29,3 +29,11 @@ platform clean
 platform generate
 platform generate
 platform generate
+platform generate
+platform active {vdma_sys_wrapper}
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate -domains 
+platform generate

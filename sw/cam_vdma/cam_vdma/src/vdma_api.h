@@ -39,30 +39,6 @@ typedef struct
 
 /**************************** Function Definitions *********************************/
 
-/**
- * Function to configure the read channel of the VDMA.
- *
- * @param vdma_context is the context pointer to the VDMA.
- * @return XST_SUCCESS if successful, else XST_FAILURE.
- */
-static int vdma_read_setup(VdmaHandle *vdma_context);
-
-/**
- * Function to configure the write channel of the VDMA.
- *
- * @param vdma_context is the context pointer to the VDMA.
- * @return XST_SUCCESS if successful, else XST_FAILURE.
- */
-static int vdma_write_setup(VdmaHandle *vdma_context);
-
-/**
- * Function to start VDMA transfers. If the DMA engine is operating in circular
- * buffer mode, video frames will be transferred continuously.
- *
- * @param InstancePtr is a pointer to the XAxiVdma instance.
- * @return XST_SUCCESS if successful, else XST_FAILURE.
- */
-static int vdma_start_transfer(XAxiVdma *InstancePtr);
 
 /**
  * Primary function to run VDMA. Calls the other functions defined in vdma_api.h

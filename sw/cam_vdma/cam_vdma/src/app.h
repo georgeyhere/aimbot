@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xparameters.h"
+#include "sleep.h"
 
 #include "ov7670.h"
 #include "vdma_api.h"
