@@ -37,3 +37,10 @@ platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrappe
 platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
 platform generate -domains 
 platform generate
+platform active {vdma_sys_wrapper}
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform config -updatehw {/home/george/repos/aimbot/sw/cam_vdma/vdma_sys_wrapper.xsa}
+platform generate -domains 

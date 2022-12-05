@@ -8,6 +8,7 @@
 
 #include "ov7670.h"
 #include "vdma_api.h"
+#include "tpg_utilities.h"
 
 #define XIIC_DEVICE_ID     XPAR_XIICPS_0_DEVICE_ID
 #define XIIC_SCLK_RATE     100000

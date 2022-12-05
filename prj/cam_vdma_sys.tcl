@@ -124,8 +124,10 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
+xilinx.com:user:iic_to_sccb:1.0\
 xilinx.com:ip:processing_system7:5.5\
 xilinx.com:ip:proc_sys_reset:5.0\
+xilinx.com:ip:clk_wiz:6.0\
 digilentinc.com:ip:rgb2dvi:1.4\
 xilinx.com:ip:v_axi4s_vid_out:4.0\
 xilinx.com:ip:v_tc:6.2\
@@ -133,8 +135,6 @@ xilinx.com:ip:xlconstant:1.1\
 xilinx.com:ip:axi_vdma:6.3\
 xilinx.com:ip:axis_data_fifo:2.0\
 xilinx.com:user:ov7670_capture:1.0\
-xilinx.com:ip:axi_iic:2.1\
-xilinx.com:user:iic_to_sccb:1.0\
 "
 
    set list_ips_missing ""
@@ -163,74 +163,6 @@ if { $bCheckIPsPassed != 1 } {
 # DESIGN PROCs
 ##################################################################
 
-
-# Hierarchical cell: camera_config
-proc create_hier_cell_camera_config { parentCell nameHier } {
-
-  variable script_folder
-
-  if { $parentCell eq "" || $nameHier eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_camera_config() - Empty argument(s)!"}
-     return
-  }
-
-  # Get object for parentCell
-  set parentObj [get_bd_cells $parentCell]
-  if { $parentObj == "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
-     return
-  }
-
-  # Make sure parentObj is hier blk
-  set parentType [get_property TYPE $parentObj]
-  if { $parentType ne "hier" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
-     return
-  }
-
-  # Save current instance; Restore later
-  set oldCurInst [current_bd_instance .]
-
-  # Set parent object as current
-  current_bd_instance $parentObj
-
-  # Create cell and set as current instance
-  set hier_obj [create_bd_cell -type hier $nameHier]
-  current_bd_instance $hier_obj
-
-  # Create interface pins
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
-
-
-  # Create pins
-  create_bd_pin -dir O CAM_SIOC
-  create_bd_pin -dir IO CAM_SIOD
-  create_bd_pin -dir I -type clk s_axi_aclk
-  create_bd_pin -dir I -type rst s_axi_aresetn
-
-  # Create instance: axi_iic_0, and set properties
-  set axi_iic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_iic:2.1 axi_iic_0 ]
-  set_property -dict [ list \
-   CONFIG.IIC_BOARD_INTERFACE {hdmi_in_ddc} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_iic_0
-
-  # Create instance: iic_to_sccb_0, and set properties
-  set iic_to_sccb_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:iic_to_sccb:1.0 iic_to_sccb_0 ]
-
-  # Create interface connections
-  connect_bd_intf_net -intf_net axi_iic_0_IIC [get_bd_intf_pins axi_iic_0/IIC] [get_bd_intf_pins iic_to_sccb_0/IIC]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins S_AXI] [get_bd_intf_pins axi_iic_0/S_AXI]
-
-  # Create port connections
-  connect_bd_net -net Net [get_bd_pins CAM_SIOD] [get_bd_pins iic_to_sccb_0/SIOD]
-  connect_bd_net -net iic_to_sccb_0_SIOC [get_bd_pins CAM_SIOC] [get_bd_pins iic_to_sccb_0/SIOC]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins s_axi_aclk] [get_bd_pins axi_iic_0/s_axi_aclk]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins s_axi_aresetn] [get_bd_pins axi_iic_0/s_axi_aresetn]
-
-  # Restore current instance
-  current_bd_instance $oldCurInst
-}
 
 # Hierarchical cell: camera_capture
 proc create_hier_cell_camera_capture { parentCell nameHier } {
@@ -351,8 +283,6 @@ proc create_hier_cell_video_processing { parentCell nameHier } {
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS_MM2S
 
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S02_AXI
-
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS_S2MM
 
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_LITE
@@ -432,15 +362,35 @@ proc create_hier_cell_video_out { parentCell nameHier } {
 
 
   # Create pins
+  create_bd_pin -dir I -type clk SerialClk
   create_bd_pin -dir I -type clk aclk
   create_bd_pin -dir I -from 0 -to 0 -type rst aresetn
   create_bd_pin -dir I -from 0 -to 0 -type rst video_arst
   create_bd_pin -dir I -type clk video_clk
 
+  # Create instance: clk_wiz_0, and set properties
+  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {200.536} \
+   CONFIG.CLKOUT1_PHASE_ERROR {237.727} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {250} \
+   CONFIG.CLKOUT2_JITTER {110.209} \
+   CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
+   CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {100.000} \
+   CONFIG.CLKOUT2_USED {false} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {40.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} \
+   CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+   CONFIG.NUM_OUT_CLKS {1} \
+   CONFIG.USE_LOCKED {false} \
+   CONFIG.USE_RESET {false} \
+ ] $clk_wiz_0
+
   # Create instance: rgb2dvi_0, and set properties
   set rgb2dvi_0 [ create_bd_cell -type ip -vlnv digilentinc.com:ip:rgb2dvi:1.4 rgb2dvi_0 ]
   set_property -dict [ list \
    CONFIG.kClkRange {3} \
+   CONFIG.kGenerateSerialClk {false} \
  ] $rgb2dvi_0
 
   # Create instance: v_axi4s_vid_out_0, and set properties
@@ -452,17 +402,27 @@ proc create_hier_cell_video_out { parentCell nameHier } {
   # Create instance: v_tc_0, and set properties
   set v_tc_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_tc:6.2 v_tc_0 ]
   set_property -dict [ list \
-   CONFIG.GEN_F0_VFRAME_SIZE {628} \
-   CONFIG.GEN_F0_VSYNC_HSTART {695} \
-   CONFIG.GEN_F0_VSYNC_VEND {605} \
-   CONFIG.GEN_F0_VSYNC_VSTART {601} \
-   CONFIG.GEN_HACTIVE_SIZE {800} \
-   CONFIG.GEN_HFRAME_SIZE {1056} \
-   CONFIG.GEN_HSYNC_END {968} \
-   CONFIG.GEN_HSYNC_START {840} \
-   CONFIG.GEN_VACTIVE_SIZE {600} \
+   CONFIG.GEN_F0_VBLANK_HEND {656} \
+   CONFIG.GEN_F0_VBLANK_HSTART {656} \
+   CONFIG.GEN_F0_VFRAME_SIZE {525} \
+   CONFIG.GEN_F0_VSYNC_HEND {656} \
+   CONFIG.GEN_F0_VSYNC_HSTART {656} \
+   CONFIG.GEN_F0_VSYNC_VEND {491} \
+   CONFIG.GEN_F0_VSYNC_VSTART {489} \
+   CONFIG.GEN_F1_VBLANK_HEND {656} \
+   CONFIG.GEN_F1_VBLANK_HSTART {656} \
+   CONFIG.GEN_F1_VFRAME_SIZE {525} \
+   CONFIG.GEN_F1_VSYNC_HEND {656} \
+   CONFIG.GEN_F1_VSYNC_HSTART {656} \
+   CONFIG.GEN_F1_VSYNC_VEND {491} \
+   CONFIG.GEN_F1_VSYNC_VSTART {489} \
+   CONFIG.GEN_HACTIVE_SIZE {640} \
+   CONFIG.GEN_HFRAME_SIZE {800} \
+   CONFIG.GEN_HSYNC_END {752} \
+   CONFIG.GEN_HSYNC_START {656} \
+   CONFIG.GEN_VACTIVE_SIZE {480} \
    CONFIG.HAS_AXI4_LITE {false} \
-   CONFIG.VIDEO_MODE {Custom} \
+   CONFIG.VIDEO_MODE {480p} \
    CONFIG.enable_detection {false} \
  ] $v_tc_0
 
@@ -478,7 +438,8 @@ proc create_hier_cell_video_out { parentCell nameHier } {
   # Create port connections
   connect_bd_net -net aclk_1 [get_bd_pins aclk] [get_bd_pins v_axi4s_vid_out_0/aclk]
   connect_bd_net -net aresetn_1 [get_bd_pins aresetn] [get_bd_pins v_axi4s_vid_out_0/aresetn]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins video_clk] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins video_clk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
+  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins rgb2dvi_0/SerialClk]
   connect_bd_net -net proc_sys_reset_0_peripheral_reset [get_bd_pins video_arst] [get_bd_pins rgb2dvi_0/aRst] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_reset]
   connect_bd_net -net v_axi4s_vid_out_0_sof_state_out [get_bd_pins v_axi4s_vid_out_0/sof_state_out] [get_bd_pins v_tc_0/sof_state]
   connect_bd_net -net v_axi4s_vid_out_0_vtg_ce [get_bd_pins v_axi4s_vid_out_0/vtg_ce] [get_bd_pins v_tc_0/gen_clken]
@@ -527,9 +488,9 @@ proc create_hier_cell_mcs { parentCell nameHier } {
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO
 
-  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M01_AXI
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 IIC_0
 
-  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M02_AXI
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI
 
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI_HP0
 
@@ -539,6 +500,7 @@ proc create_hier_cell_mcs { parentCell nameHier } {
   create_bd_pin -dir O -type clk FCLK_CLK0
   create_bd_pin -dir O -type clk FCLK_CLK1
   create_bd_pin -dir O -type clk FCLK_CLK2
+  create_bd_pin -dir O -type clk FCLK_CLK3
   create_bd_pin -dir O -type rst FCLK_RESET0_N
   create_bd_pin -dir O -from 0 -to 0 -type rst peripheral_reset
 
@@ -551,9 +513,9 @@ proc create_hier_cell_mcs { parentCell nameHier } {
    CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {125.000000} \
    CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
    CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
-   CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {40.000000} \
+   CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {25.000000} \
    CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {23.809525} \
-   CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {250.000000} \
    CONFIG.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ {200.000000} \
    CONFIG.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
    CONFIG.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ {50.000000} \
@@ -574,9 +536,9 @@ proc create_hier_cell_mcs { parentCell nameHier } {
    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0 {1} \
    CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_CLK0_FREQ {100000000} \
-   CONFIG.PCW_CLK1_FREQ {40000000} \
+   CONFIG.PCW_CLK1_FREQ {25000000} \
    CONFIG.PCW_CLK2_FREQ {23809525} \
-   CONFIG.PCW_CLK3_FREQ {10000000} \
+   CONFIG.PCW_CLK3_FREQ {250000000} \
    CONFIG.PCW_CPU_CPU_6X4X_MAX_RANGE {667} \
    CONFIG.PCW_CPU_CPU_PLL_FREQMHZ {1333.333} \
    CONFIG.PCW_CPU_PERIPHERAL_CLKSRC {ARM PLL} \
@@ -621,36 +583,50 @@ proc create_hier_cell_mcs { parentCell nameHier } {
    CONFIG.PCW_EN_4K_TIMER {0} \
    CONFIG.PCW_EN_CLK1_PORT {1} \
    CONFIG.PCW_EN_CLK2_PORT {1} \
+   CONFIG.PCW_EN_CLK3_PORT {1} \
+   CONFIG.PCW_EN_EMIO_I2C0 {1} \
+   CONFIG.PCW_EN_EMIO_I2C1 {0} \
    CONFIG.PCW_EN_ENET0 {1} \
    CONFIG.PCW_EN_GPIO {1} \
+   CONFIG.PCW_EN_I2C0 {1} \
+   CONFIG.PCW_EN_I2C1 {0} \
    CONFIG.PCW_EN_QSPI {1} \
    CONFIG.PCW_EN_SDIO0 {1} \
    CONFIG.PCW_EN_UART1 {1} \
    CONFIG.PCW_EN_USB0 {1} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
    CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {5} \
-   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {5} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {40} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {1} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {42} \
    CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
-   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
-   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {2} \
+   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {2} \
    CONFIG.PCW_FCLK_CLK1_BUF {TRUE} \
    CONFIG.PCW_FCLK_CLK2_BUF {TRUE} \
+   CONFIG.PCW_FCLK_CLK3_BUF {FALSE} \
    CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
-   CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {40} \
+   CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {25.2} \
    CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {24} \
+   CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {250} \
    CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
    CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
    CONFIG.PCW_FPGA_FCLK2_ENABLE {1} \
-   CONFIG.PCW_FPGA_FCLK3_ENABLE {0} \
+   CONFIG.PCW_FPGA_FCLK3_ENABLE {1} \
    CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
    CONFIG.PCW_GPIO_MIO_GPIO_IO {MIO} \
    CONFIG.PCW_GPIO_PERIPHERAL_ENABLE {0} \
+   CONFIG.PCW_I2C0_GRP_INT_ENABLE {1} \
+   CONFIG.PCW_I2C0_GRP_INT_IO {EMIO} \
+   CONFIG.PCW_I2C0_I2C0_IO {EMIO} \
+   CONFIG.PCW_I2C0_PERIPHERAL_ENABLE {1} \
    CONFIG.PCW_I2C0_RESET_ENABLE {0} \
+   CONFIG.PCW_I2C1_GRP_INT_ENABLE {0} \
+   CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {0} \
    CONFIG.PCW_I2C1_RESET_ENABLE {0} \
-   CONFIG.PCW_I2C_PERIPHERAL_FREQMHZ {25} \
+   CONFIG.PCW_I2C_PERIPHERAL_FREQMHZ {111.111115} \
    CONFIG.PCW_I2C_RESET_ENABLE {1} \
+   CONFIG.PCW_I2C_RESET_SELECT {Share reset pin} \
    CONFIG.PCW_IOPLL_CTRL_FBDIV {30} \
    CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
    CONFIG.PCW_IRQ_F2P_MODE {DIRECT} \
@@ -1035,30 +1011,31 @@ gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {2} \
+   CONFIG.NUM_MI {1} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
   set rst_ps7_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_100M ]
 
-  # Create instance: rst_ps7_0_40M, and set properties
-  set rst_ps7_0_40M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_40M ]
+  # Create instance: rst_ps7_0_25M, and set properties
+  set rst_ps7_0_25M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_25M ]
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins S_AXI_HP0] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_pins DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_pins FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
+  connect_bd_intf_net -intf_net processing_system7_0_IIC_0 [get_bd_intf_pins IIC_0] [get_bd_intf_pins processing_system7_0/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins M02_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins M01_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins M00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FCLK_CLK0] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins FCLK_CLK1] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins rst_ps7_0_40M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FCLK_CLK0] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins FCLK_CLK1] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins rst_ps7_0_25M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_pins FCLK_CLK2] [get_bd_pins processing_system7_0/FCLK_CLK2]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins FCLK_RESET0_N] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins rst_ps7_0_40M/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins ARESETN] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
-  connect_bd_net -net rst_ps7_0_40M_peripheral_reset [get_bd_pins peripheral_reset] [get_bd_pins rst_ps7_0_40M/peripheral_reset]
+  connect_bd_net -net processing_system7_0_FCLK_CLK3 [get_bd_pins FCLK_CLK3] [get_bd_pins processing_system7_0/FCLK_CLK3]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins FCLK_RESET0_N] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in] [get_bd_pins rst_ps7_0_25M/ext_reset_in]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins ARESETN] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_40M_peripheral_reset [get_bd_pins peripheral_reset] [get_bd_pins rst_ps7_0_25M/peripheral_reset]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1099,9 +1076,9 @@ proc create_hier_cell_camera { parentCell nameHier } {
   current_bd_instance $hier_obj
 
   # Create interface pins
-  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:iic_rtl:1.0 IIC
 
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S_AXI
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS
 
 
   # Create pins
@@ -1109,32 +1086,30 @@ proc create_hier_cell_camera { parentCell nameHier } {
   create_bd_pin -dir I CAM_HREF
   create_bd_pin -dir I -type clk CAM_PCLK
   create_bd_pin -dir I CAM_VSYNC
-  create_bd_pin -dir O SIOC
-  create_bd_pin -dir IO SIOD
+  create_bd_pin -dir O SIOC_0
+  create_bd_pin -dir IO SIOD_0
   create_bd_pin -dir I -type rst ext_reset_in
   create_bd_pin -dir I -type clk s_axi_aclk
-  create_bd_pin -dir I -type rst s_axi_aresetn
 
   # Create instance: camera_capture
   create_hier_cell_camera_capture $hier_obj camera_capture
 
-  # Create instance: camera_config
-  create_hier_cell_camera_config $hier_obj camera_config
+  # Create instance: iic_to_sccb_0, and set properties
+  set iic_to_sccb_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:iic_to_sccb:1.0 iic_to_sccb_0 ]
 
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M_AXIS] [get_bd_intf_pins camera_capture/M_AXIS]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins S_AXI] [get_bd_intf_pins camera_config/S_AXI]
+  connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins IIC] [get_bd_intf_pins iic_to_sccb_0/IIC]
 
   # Create port connections
   connect_bd_net -net CAM_PCLK_1 [get_bd_pins CAM_PCLK] [get_bd_pins camera_capture/CAM_PCLK]
-  connect_bd_net -net Net [get_bd_pins SIOD] [get_bd_pins camera_config/CAM_SIOD]
+  connect_bd_net -net Net [get_bd_pins SIOD_0] [get_bd_pins iic_to_sccb_0/SIOD]
   connect_bd_net -net ext_reset_in_1 [get_bd_pins ext_reset_in] [get_bd_pins camera_capture/ext_reset_in]
   connect_bd_net -net i_data_0_1 [get_bd_pins CAM_DATA] [get_bd_pins camera_capture/CAM_DATA]
   connect_bd_net -net i_href_0_1 [get_bd_pins CAM_HREF] [get_bd_pins camera_capture/CAM_HREF]
   connect_bd_net -net i_vsync_0_1 [get_bd_pins CAM_VSYNC] [get_bd_pins camera_capture/CAM_VSYNC]
-  connect_bd_net -net iic_to_sccb_0_SIOC [get_bd_pins SIOC] [get_bd_pins camera_config/CAM_SIOC]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins s_axi_aclk] [get_bd_pins camera_capture/sysclk] [get_bd_pins camera_config/s_axi_aclk]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins s_axi_aresetn] [get_bd_pins camera_config/s_axi_aresetn]
+  connect_bd_net -net iic_to_sccb_0_SIOC [get_bd_pins SIOC_0] [get_bd_pins iic_to_sccb_0/SIOC]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins s_axi_aclk] [get_bd_pins camera_capture/sysclk]
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -1206,28 +1181,28 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net S_AXIS_S2MM_1 [get_bd_intf_pins camera/M_AXIS] [get_bd_intf_pins video_processing/S_AXIS_S2MM]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins mcs/S_AXI_HP0] [get_bd_intf_pins video_processing/M00_AXI]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins video_out/video_in] [get_bd_intf_pins video_processing/M_AXIS_MM2S]
+  connect_bd_intf_net -intf_net mcs_IIC_0 [get_bd_intf_pins camera/IIC] [get_bd_intf_pins mcs/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins mcs/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins mcs/FIXED_IO]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins mcs/M01_AXI] [get_bd_intf_pins video_processing/S_AXI_LITE]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins camera/S_AXI] [get_bd_intf_pins mcs/M02_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins mcs/M00_AXI] [get_bd_intf_pins video_processing/S_AXI_LITE]
   connect_bd_intf_net -intf_net rgb2dvi_0_TMDS [get_bd_intf_ports TMDS_0] [get_bd_intf_pins video_out/TMDS_0]
 
   # Create port connections
   connect_bd_net -net CAM_PCLK_1 [get_bd_ports CAM_PCLK] [get_bd_pins camera/CAM_PCLK]
-  connect_bd_net -net Net [get_bd_ports CAM_SIOD] [get_bd_pins camera/SIOD]
-  connect_bd_net -net camera_SIOC_0 [get_bd_ports CAM_SIOC] [get_bd_pins camera/SIOC]
+  connect_bd_net -net Net [get_bd_ports CAM_SIOD] [get_bd_pins camera/SIOD_0]
+  connect_bd_net -net camera_SIOC_0 [get_bd_ports CAM_SIOC] [get_bd_pins camera/SIOC_0]
   connect_bd_net -net ext_reset_in_1 [get_bd_pins camera/ext_reset_in] [get_bd_pins mcs/FCLK_RESET0_N]
   connect_bd_net -net i_data_0_1 [get_bd_ports CAM_DATA] [get_bd_pins camera/CAM_DATA]
   connect_bd_net -net i_href_0_1 [get_bd_ports CAM_HREF] [get_bd_pins camera/CAM_HREF]
   connect_bd_net -net i_vsync_0_1 [get_bd_ports CAM_VSYNC] [get_bd_pins camera/CAM_VSYNC]
   connect_bd_net -net mcs_CAM_XCLK [get_bd_ports CAM_XCLK] [get_bd_pins mcs/FCLK_CLK2]
   connect_bd_net -net mcs_FCLK_CLK1 [get_bd_pins mcs/FCLK_CLK1] [get_bd_pins video_out/video_clk]
+  connect_bd_net -net mcs_FCLK_CLK3 [get_bd_pins mcs/FCLK_CLK3] [get_bd_pins video_out/SerialClk]
   connect_bd_net -net mcs_peripheral_reset [get_bd_pins mcs/peripheral_reset] [get_bd_pins video_out/video_arst]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins camera/s_axi_aclk] [get_bd_pins mcs/FCLK_CLK0] [get_bd_pins video_out/aclk] [get_bd_pins video_processing/ACLK]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins camera/s_axi_aresetn] [get_bd_pins mcs/ARESETN] [get_bd_pins video_out/aresetn] [get_bd_pins video_processing/ARESETN]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins mcs/ARESETN] [get_bd_pins video_out/aresetn] [get_bd_pins video_processing/ARESETN]
 
   # Create address segments
-  assign_bd_address -offset 0x41600000 -range 0x00010000 -target_address_space [get_bd_addr_spaces mcs/processing_system7_0/Data] [get_bd_addr_segs camera/camera_config/axi_iic_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x43000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces mcs/processing_system7_0/Data] [get_bd_addr_segs video_processing/axi_vdma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x40000000 -target_address_space [get_bd_addr_spaces video_processing/axi_vdma_0/Data_MM2S] [get_bd_addr_segs mcs/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
   assign_bd_address -offset 0x00000000 -range 0x40000000 -target_address_space [get_bd_addr_spaces video_processing/axi_vdma_0/Data_S2MM] [get_bd_addr_segs mcs/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force

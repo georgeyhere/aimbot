@@ -29,7 +29,7 @@ module cam_capture_maxis
     input  logic [7:0]  i_data,   // 8-bit input data
 
     // AXI-Stream Master Interface
-    output logic [15:0] M_AXIS_VIDEO_TDATA,
+    output logic [15:0] M_AXIS_VIDEO_TDATA,  // RGB565 video out
     output logic        M_AXIS_TVALID,
     input  logic        M_AXIS_VIDEO_TREADY, // unused
     output logic        M_AXIS_VIDEO_TUSER,  // SoF

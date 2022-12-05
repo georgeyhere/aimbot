@@ -47,7 +47,7 @@ static const ov7670_addr_data_t ov7670_defaultCfg [] = {
     {OV7670_REG_BD60MAX, 0x07},
 
     // Reset COM2, disable soft sleep mode
-    {OV7670_COM2_SSLEEP, 0x00},
+    //{OV7670_COM2_SSLEEP, 0x00},
 
     // Enable full window 
     {OV7670_REG_COM4, 0x00},
