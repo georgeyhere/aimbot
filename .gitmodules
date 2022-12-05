@@ -1,0 +1,3 @@
+[submodule "ip/axi-video-processing"]
+	path = ip/axi-video-processing
+	url = https://github.com/georgeyhere/axi-video-processing.git
