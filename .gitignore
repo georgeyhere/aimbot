@@ -1,5 +1,4 @@
-/ip/*
-/prj/*
+gip/*
 
 !/ip/DigilentIP
 !/ip/i2c_to_sccb
@@ -9,6 +8,7 @@
 !/prj/tpg_sys.tcl
 !/prj/tpg_vdma_sys.tcl
 !/prj/cam_vdma_sys.tcl
+/prj/2022
 
 /sw/tpg/.metadata
 /sw/tpg/RemoteSystemsTempFiles

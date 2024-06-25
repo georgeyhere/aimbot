@@ -3,35 +3,24 @@ SHELL := /bin/bash
 ############
 # Tooling 
 ############
-VIVADO_PATH := /tools/Xilinx/Vivado/2024.1
+export VIVADO_PATH := /tools/Xilinx/Vivado/2024.1
 
 ############
 # Config
 ############
-LIB_DIR=./lib
+export LIB_DIR    :=./lib
+export PROTO_PATH :=$(shell pwd)
+export PRJ_NAME   :=""
+export PRJ_PART   :="xc7z020clg400-1"
+export PRJ_SCRIPT := tpg_vdma_sys.tcl
 
-PROTO_PATH :=$(shell pwd)
-PRJ_NAME   :=""
-PRJ_PART   :="xc7z020clg400-1"
-
-BRD_PART   :="digilentinc.com:zybo-z7-20:part0:1.1"
-
-
-############
-export PROTO_PATH
-export PRJ_NAME
-export PRJ_PART
 ############
 
 vivado: setup init
-	@if [ -z "$(target)" ]; then \
-		echo "Usage: make vivado target=<project script name>"; \
-		exit 1; \
-	fi
 	@echo "PROTO_PATH=$(PROTO_PATH)"
-	@export PRJ_SCRIPT=$(target)
+	@echo "PRJ_SCRIPT=$(PRJ_SCRIPT)"
 	@cd lib
-	@vivado -mode batch -source $(PROTO_PATH)/scripts/run_vivado.tcl
+	@vivado -mode batch -source $(PROTO_PATH)/scripts/run_vivado.tcl -tclargs $(PROTO_PATH) $(PRJ_SCRIPT) $(PRJ_PART)
 
 setup:
 	source $(VIVADO_PATH)/settings64.sh
