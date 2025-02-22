@@ -1,39 +1,110 @@
-SHELL := /bin/bash
+.PHONY: default
+default: sim_regr
 
-############
-# Tooling 
-############
-export VIVADO_PATH := /tools/Xilinx/Vivado/2024.1
+.PHONY: help
+help:
+	@echo "-----------------------------------------------------------------------------"
+	@echo "Syntax:"
+	@echo "make [make target] [options]"
+	@echo "-----------------------------------------------------------------------------"
+	@echo "Targets:"
+	@echo "    sim_regr XSIM_OPTS=[opts]:                 Run unit test regressions."
+	@echo "    sim      TB_NAME=[name] XSIM_OPTS=[opts]:  Run a specific unit test."
+	@echo "    syn:                                       Run synthesis."
+	@echo "-----------------------------------------------------------------------------"
+	@echo "Options:"
+	@echo "    SIMULATOR=[xilinx, siemens, vcs]: Select simulation toolchain."
+	@echo "-----------------------------------------------------------------------------"
 
-############
-# Config
-############
-export LIB_DIR    :=./lib
-export PROTO_PATH :=$(shell pwd)
-export PRJ_NAME   :=""
-export PRJ_PART   :="xc7z020clg400-1"
-export PRJ_SCRIPT := tpg_vdma_sys.tcl
+#------------#
+# Path setup #
+#------------#
+PRJ_ROOT=$(shell pwd)
+export PRJ_ROOT
+PRJ_SCRIPTS=$(PRJ_ROOT)/scripts
+export PRJ_SCRIPTS
+UNISIM_PATH=$(XILINX_VIVADO)/data/verilog/src/unisims
 
-############
+#-------------------------#
+# Toolchain Configuration #
+#-------------------------#
 
-vivado: setup init
-	@echo "PROTO_PATH=$(PROTO_PATH)"
-	@echo "PRJ_SCRIPT=$(PRJ_SCRIPT)"
-	@cd lib
-	@vivado -mode batch -source $(PROTO_PATH)/scripts/run_vivado.tcl -tclargs $(PROTO_PATH) $(PRJ_SCRIPT) $(PRJ_PART)
+# Simulator selection:
+# [xilinx, siemens, vcs]
+SIMULATOR="siemens"
+SIM_GUI=0
+export SIM_GUI
 
+
+#-----------#
+# VCS Setup #
+#-----------#
+DW_HOME=
+VCS=vcs
+VCS_OPTS=
+SIMV_OPTS=
+
+#---------------#
+# Siemens Setup #
+#---------------#
+SIEMENS_PATH=~/opt/intel/modelsim_ase
+VLOG=$(SIEMENS_PATH)/bin/vlog
+VOPT=$(SIEMENS_PATH)/bin/vopt
+VSIM=$(SIEMENS_PATH)/bin/vsim
+
+VLOG_OPTS=-sv 
+VSIM_OPTS += $(if $(filter 0, $(SIM_GUI)), -c)
+
+#------------------------------------------#
+# Vivado Simulation Setup                  #
+# SystemVerilog VCD dumping not supported! #
+#------------------------------------------#
+XVLOG=$(XILINX_VIVADO)/bin/xvlog
+XELAB=$(XILINX_VIVADO)/bin/xelab
+XSIM=$(XILINX_VIVADO)/bin/xsim
+
+XVLOG_OPTS=-sv -log xvlog.log
+XELAB_OPTS=
+XSIM_OPTS=
+
+# 
+XSIM_OPTS += $(if $(filter 1, $(SIM_GUI)), -gui)
+
+#-------------------#
+# Utility Functions #
+#-------------------#
+MKDIR = bash $(PRJ_SCRIPTS)/make_utils.sh util_mkdir
+
+
+#--------------------#
+# Environment Checks #
+#--------------------#
 setup:
-	source $(VIVADO_PATH)/settings64.sh
+	@echo "PRJ_ROOT:      $(PRJ_ROOT)"
+	@echo "XILINX_VIVADO: $(XILINX_VIVADO)"
+	@echo "SIMULATOR:     $(SIMULATOR)"
+	@if [ -z "$(XILINX_VIVADO)" ]; then \
+		echo "\nError- Environment variable XILINX_VIVADO not found"; \
+	fi 
+	$(MKDIR) foo
 
-init:
-	@if [ -d "$(LIB_DIR)" ]; then \
-		echo "lib exists, not remaking it"; \
-	else \
-		echo "lib doesn't exist, creating it now."; \
-		mkdir -p "$(LIB_DIR)"; \
-	fi
+#-----------------------#
+# TPG VDMA Demo Project #
+#-----------------------#
+setup_tpg_vdma: setup
+	$(call make-dir)
 
+
+
+
+.PHONY: clean
 clean:
-	rm -rf lib
+	rm -rf xvlog*
+	rm -rf xelab*
+	rm -rf xsim*
 	rm -rf *.log
-	rm -rf *.jou
+	rm -rf *wdb
+	rm -rf transcript
+	rm -rf work
+
+
