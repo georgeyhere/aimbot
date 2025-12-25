@@ -21,7 +21,7 @@ help:
 	@echo "    make help:                                        Show this help message"
 	@echo ""
 	@echo "Valid projects: $(PROJECTS)"
-	@echo "Valid STOP_AFTER stages: create, bd, wrapper, xdc, post, all"
+	@echo "Valid STOP_AFTER stages: create, bd, wrapper, xdc, post, synthesis, all"
 	@echo ""
 	@echo "Examples:"
 	@echo "    make project PROJECT=tpg_vdma                      # Full build of tpg_vdma project"
@@ -29,6 +29,7 @@ help:
 	@echo "    make project PROJECT=tpg_vdma STOP_AFTER=bd        # Stop after block design recreation"
 	@echo "    make project PROJECT=tpg_vdma STOP_AFTER=wrapper   # Stop after HDL wrapper creation"
 	@echo "    make project PROJECT=tpg_vdma STOP_AFTER=xdc       # Stop after adding constraints"
+	@echo "    make project PROJECT=tpg_vdma STOP_AFTER=synthesis # Run synthesis after build"
 	@echo ""
 	@echo "GUI Options:"
 	@echo "    make project PROJECT=tpg_vdma GUI=1                # Full build in Vivado GUI"
@@ -36,6 +37,7 @@ help:
 	@echo "Other:"
 	@echo "    make clean                                         # Clean all build artifacts"
 	@echo "-----------------------------------------------------------------------------"
+
 
 .PHONY: project
 project:
@@ -53,7 +55,7 @@ project:
 		exit 1; \
 	fi
 	mkdir -p lib
-	$(XILINX_VIVADO)/bin/vivado -mode $(VIVADO_MODE) -source $(WORKROOT)/scripts/build_project.tcl -tclargs $(PROJECT) $(STOP_AFTER) -notrace -log vivado_$(PROJECT).log 
+	$(XILINX_VIVADO)/bin/vivado -mode $(VIVADO_MODE) -source $(WORKROOT)/scripts/do_flow.tcl -tclargs $(PROJECT) $(STOP_AFTER) -notrace -log flow_$(PROJECT).log
 
 .PHONY: clean
 clean:
