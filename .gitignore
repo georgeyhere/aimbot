@@ -1,1 +1,5 @@
 lib
+*.str
+*.jou
+*.log 
+*.html
