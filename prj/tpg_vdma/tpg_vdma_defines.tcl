@@ -8,5 +8,5 @@ set BRD_PART "digilentinc.com:zybo-z7-20:part0:1.2"
 # These should be generated from Vivado via write_bd_tcl. 
 # For example:
 # > write_bd_tcl -force /home/george/repos/aimbot/prj/tpg_vdma/bd/vdma_tpg.tcl
-set BD_TCL_SCRIPTS [list "bd/vdma_tpg_bd.tcl"]
+set BD_TCL_SCRIPTS [list "bd/tpg_vdma_bd.tcl"]
 

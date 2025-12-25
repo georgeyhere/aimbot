@@ -118,6 +118,8 @@ if {[llength $BD_TCL_SCRIPTS] > 0} {
         set script_path "$PRJ_DIR/$script"
         if {[file exists $script_path]} {
             puts "Sourcing BD TCL script $script_path"
+            # Set origin_dir_loc so the BD TCL script creates the block design in the intended location
+            set ::origin_dir_loc "$BUILD_DIR/prj"
             source $script_path
         } else {
             puts "Warning: BD TCL script $script_path not found."
@@ -142,10 +144,11 @@ puts "###########################################"
 set bds [get_bd_designs -quiet]
 if {[llength $bds] > 0} {
     foreach bd $bds {
-        set bd_file "$BUILD_DIR/${PRJ_NAME}.srcs/sources_1/bd/${bd}/${bd}.bd"
+        set bd_file "$BUILD_DIR/prj/${bd}/${bd}.bd"
         if {[file exists $bd_file]} {
             puts "Creating HDL wrapper for block design $bd"
             make_wrapper -files [get_files $bd_file] -top
+            add_files -norecurse $BUILD_DIR/prj/${bd}/hdl/${bd}_wrapper.v
         } else {
             puts "Warning: BD file $bd_file not found for wrapper creation."
         }
