@@ -1,22 +1,29 @@
 #!/bin/bash
 
+#VIVADO_VERSION="2024.1"
+VIVADO_VERSION="2025.2"
+
 # Setup Vivado
+unset XILINX_VIVADO
 if [ -z "$XILINX_VIVADO" ]; then
-    VIVADO_VERSION="2024.1"
+  if [ "$VIVADO_VERSION" = "2025.2" ]; then
+    SETTINGS_PATH="/tools/Xilinx/2025.2/Vivado/settings64.sh"
+  else
     SETTINGS_PATH="/tools/Xilinx/Vivado/$VIVADO_VERSION/settings64.sh"
-    
-    if [ -f "$SETTINGS_PATH" ]; then
-        echo "Sourcing Vivado settings from $SETTINGS_PATH"
-        source "$SETTINGS_PATH"
-    else
-        echo "Error: Vivado settings not found at $SETTINGS_PATH."
-        echo "Please install Vivado or set XILINX_VIVADO manually."
-        exit 1
-    fi
+  fi
+
+  if [ -f "$SETTINGS_PATH" ]; then
+    echo "Sourcing Vivado settings from $SETTINGS_PATH"
+    source "$SETTINGS_PATH"
+  else
+    echo "Error: Vivado settings not found at $SETTINGS_PATH."
+    echo "Please install Vivado or set XILINX_VIVADO manually."
+    exit 1
+  fi
 fi
 if [ -z "$XILINX_VIVADO" ]; then
-    echo "Error: XILINX_VIVADO is not set."
-    exit 1
+  echo "Error: XILINX_VIVADO is not set."
+  exit 1
 fi
 
 # Path setup
@@ -38,3 +45,4 @@ echo "XELAB         : $XELAB"
 echo "XSIM          : $XSIM"
 echo "UNISIM_PATH   : $UNISIM_PATH"
 echo "####################################################"
+

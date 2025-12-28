@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2024.1
+set scripts_vivado_version 2025.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -65,7 +65,7 @@ set run_remote_bd_flow 1
 if { $run_remote_bd_flow == 1 } {
   # Set the reference directory for source file relative paths (by default 
   # the value is script directory path)
-  set origin_dir ./prj
+  set origin_dir ./lib/tpg_vdma_build/prj
 
   # Use origin directory path location variable, if specified in the tcl shell
   if { [info exists ::origin_dir_loc] } {
@@ -859,19 +859,71 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net v_tpg_0_m_axis_video [get_bd_intf_pins v_tpg_0/m_axis_video] [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM]
 
   # Create port connections
-  connect_bd_net -net axi_vdma_0_mm2s_introut [get_bd_pins axi_vdma_0/mm2s_introut] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net axi_vdma_0_s2mm_introut [get_bd_pins axi_vdma_0/s2mm_introut] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net clk_in1_0_1 [get_bd_ports sys_clk_in] [get_bd_pins clk_wiz_0/clk_in1]
-  connect_bd_net -net clk_wiz_0_bus_clk [get_bd_pins clk_wiz_0/bus_clk] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins v_tpg_0/ap_clk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins v_tc_0/s_axi_aclk] [get_bd_pins rst_clk_wiz_0_150M/slowest_sync_clk]
-  connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins rst_clk_wiz_0_150M/dcm_locked] [get_bd_pins rst_clk_wiz_0_120M/dcm_locked] [get_bd_pins v_tc_0/s_axi_aclken] [get_bd_pins v_axi4s_vid_out_0/aclken]
-  connect_bd_net -net clk_wiz_0_pixel_clk [get_bd_pins clk_wiz_0/pixel_clk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins rst_clk_wiz_0_120M/slowest_sync_clk] [get_bd_pins v_tc_0/clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_clk_wiz_0_150M/ext_reset_in] [get_bd_pins rst_clk_wiz_0_120M/ext_reset_in] [get_bd_pins clk_wiz_0/resetn] [get_bd_pins rst_clk_wiz_0_120M/aux_reset_in]
-  connect_bd_net -net rst_clk_wiz_0_100M_peripheral_aresetn [get_bd_pins rst_clk_wiz_0_150M/peripheral_aresetn] [get_bd_pins v_tc_0/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins v_tpg_0/ap_rst_n]
-  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_aresetn [get_bd_pins rst_clk_wiz_0_120M/peripheral_aresetn] [get_bd_pins v_axi4s_vid_out_0/aresetn] [get_bd_pins v_tc_0/resetn]
-  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_reset [get_bd_pins rst_clk_wiz_0_120M/peripheral_reset] [get_bd_pins rgb2dvi_0/aRst]
-  connect_bd_net -net v_axi4s_vid_out_0_sof_state_out [get_bd_pins v_axi4s_vid_out_0/sof_state_out] [get_bd_pins v_tc_0/sof_state]
-  connect_bd_net -net v_axi4s_vid_out_0_vtg_ce [get_bd_pins v_axi4s_vid_out_0/vtg_ce] [get_bd_pins v_tc_0/clken]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins xlconcat_0/dout] [get_bd_pins processing_system7_0/IRQ_F2P]
+  connect_bd_net -net axi_vdma_0_mm2s_introut  [get_bd_pins axi_vdma_0/mm2s_introut] \
+  [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net axi_vdma_0_s2mm_introut  [get_bd_pins axi_vdma_0/s2mm_introut] \
+  [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net clk_in1_0_1  [get_bd_ports sys_clk_in] \
+  [get_bd_pins clk_wiz_0/clk_in1]
+  connect_bd_net -net clk_wiz_0_bus_clk  [get_bd_pins clk_wiz_0/bus_clk] \
+  [get_bd_pins axi_mem_intercon/ACLK] \
+  [get_bd_pins axi_mem_intercon/S00_ACLK] \
+  [get_bd_pins axi_mem_intercon/M00_ACLK] \
+  [get_bd_pins axi_mem_intercon/S01_ACLK] \
+  [get_bd_pins axi_vdma_0/s_axi_lite_aclk] \
+  [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] \
+  [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] \
+  [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] \
+  [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] \
+  [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] \
+  [get_bd_pins ps7_0_axi_periph/ACLK] \
+  [get_bd_pins ps7_0_axi_periph/S00_ACLK] \
+  [get_bd_pins ps7_0_axi_periph/M00_ACLK] \
+  [get_bd_pins ps7_0_axi_periph/M01_ACLK] \
+  [get_bd_pins ps7_0_axi_periph/M02_ACLK] \
+  [get_bd_pins rst_clk_wiz_0_150M/slowest_sync_clk] \
+  [get_bd_pins v_tc_0/s_axi_aclk] \
+  [get_bd_pins v_tpg_0/ap_clk]
+  connect_bd_net -net clk_wiz_0_locked  [get_bd_pins clk_wiz_0/locked] \
+  [get_bd_pins rst_clk_wiz_0_120M/dcm_locked] \
+  [get_bd_pins rst_clk_wiz_0_150M/dcm_locked] \
+  [get_bd_pins v_axi4s_vid_out_0/aclken] \
+  [get_bd_pins v_tc_0/s_axi_aclken]
+  connect_bd_net -net clk_wiz_0_pixel_clk  [get_bd_pins clk_wiz_0/pixel_clk] \
+  [get_bd_pins rgb2dvi_0/PixelClk] \
+  [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] \
+  [get_bd_pins rst_clk_wiz_0_120M/slowest_sync_clk] \
+  [get_bd_pins v_axi4s_vid_out_0/aclk] \
+  [get_bd_pins v_tc_0/clk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N  [get_bd_pins processing_system7_0/FCLK_RESET0_N] \
+  [get_bd_pins clk_wiz_0/resetn] \
+  [get_bd_pins rst_clk_wiz_0_120M/ext_reset_in] \
+  [get_bd_pins rst_clk_wiz_0_120M/aux_reset_in] \
+  [get_bd_pins rst_clk_wiz_0_150M/ext_reset_in]
+  connect_bd_net -net rst_clk_wiz_0_100M_peripheral_aresetn  [get_bd_pins rst_clk_wiz_0_150M/peripheral_aresetn] \
+  [get_bd_pins axi_mem_intercon/ARESETN] \
+  [get_bd_pins axi_mem_intercon/S00_ARESETN] \
+  [get_bd_pins axi_mem_intercon/M00_ARESETN] \
+  [get_bd_pins axi_mem_intercon/S01_ARESETN] \
+  [get_bd_pins axi_vdma_0/axi_resetn] \
+  [get_bd_pins ps7_0_axi_periph/ARESETN] \
+  [get_bd_pins ps7_0_axi_periph/S00_ARESETN] \
+  [get_bd_pins ps7_0_axi_periph/M00_ARESETN] \
+  [get_bd_pins ps7_0_axi_periph/M01_ARESETN] \
+  [get_bd_pins ps7_0_axi_periph/M02_ARESETN] \
+  [get_bd_pins v_tc_0/s_axi_aresetn] \
+  [get_bd_pins v_tpg_0/ap_rst_n]
+  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_aresetn  [get_bd_pins rst_clk_wiz_0_120M/peripheral_aresetn] \
+  [get_bd_pins v_axi4s_vid_out_0/aresetn] \
+  [get_bd_pins v_tc_0/resetn]
+  connect_bd_net -net rst_clk_wiz_0_120M_peripheral_reset  [get_bd_pins rst_clk_wiz_0_120M/peripheral_reset] \
+  [get_bd_pins rgb2dvi_0/aRst]
+  connect_bd_net -net v_axi4s_vid_out_0_sof_state_out  [get_bd_pins v_axi4s_vid_out_0/sof_state_out] \
+  [get_bd_pins v_tc_0/sof_state]
+  connect_bd_net -net v_axi4s_vid_out_0_vtg_ce  [get_bd_pins v_axi4s_vid_out_0/vtg_ce] \
+  [get_bd_pins v_tc_0/clken]
+  connect_bd_net -net xlconcat_0_dout  [get_bd_pins xlconcat_0/dout] \
+  [get_bd_pins processing_system7_0/IRQ_F2P]
 
   # Create address segments
   assign_bd_address -offset 0x43000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_vdma_0/S_AXI_LITE/Reg] -force
@@ -884,6 +936,7 @@ proc create_root_design { parentCell } {
   # Restore current instance
   current_bd_instance $oldCurInst
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -895,6 +948,4 @@ proc create_root_design { parentCell } {
 
 create_root_design ""
 
-
-common::send_gid_msg -ssname BD::TCL -id 2053 -severity "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 
