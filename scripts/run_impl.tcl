@@ -84,6 +84,24 @@ if {$rc != 0} {
     }
 }
 
+
+# Launch bitstream generation
+# TODO: Let user specify number of jobs via setup.sh
+set rc_bit [catch {launch_runs impl_1 -to_step write_bitstream -jobs 16} bit_result]
+if {$rc_bit != 0} {
+    puts "Error launching bitstream generation: $bit_result"
+    exit $rc_bit
+} else {
+    puts "Bitstream generation started. Waiting for completion..."
+    set rc2_bit [catch {wait_on_run impl_1 -quiet} wait_bit_result]
+    if {$rc2_bit != 0} {
+        puts "Error while waiting for bitstream generation: $wait_bit_result"
+        exit $rc2_bit
+    } else {
+        puts "Bitstream generation completed successfully."
+    }
+}
+
 if {$STOP_AFTER eq "impl"} {
     puts "Stopping after implementation."
     exit 0
