@@ -19,6 +19,25 @@ git submodule update --init --recursive
 ```
 
 ## Repository Structure
+This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically my Zybo Z7-20).
+
+TODO
+
+## tpg_vdma
+
+Setup the environment. You may need to edit it to point to your Vivado install path. 
+
+**Vivado 2025.2 is required.**
+```bash
+source ./setup.sh
+```
+
+
+To recreate Vivado project and kick runs:
+```bash
+make project PROJECT=tpg_vdma
+```
+
 
 ## Build Flow
 
@@ -32,3 +51,4 @@ This repo uses a primarily Make/TCL-based flow to drive the Vivado build process
 3) Executes `create_project.tcl` to create a Vivado project, setup block design, etc etc
 4) Executes `run_synthesis.tcl` to kick a synthesis run.
 5) Executes `run_par.tcl` to kick a placement run.
+
