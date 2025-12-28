@@ -86,7 +86,7 @@ if {$rc != 0} {
 
 
 # Launch bitstream generation
-# TODO: Let user specify number of jobs via setup.sh
+# TODO: see if there's a cleaner way to do this 
 set rc_bit [catch {launch_runs impl_1 -to_step write_bitstream -jobs 16} bit_result]
 if {$rc_bit != 0} {
     puts "Error launching bitstream generation: $bit_result"
@@ -101,6 +101,9 @@ if {$rc_bit != 0} {
         puts "Bitstream generation completed successfully."
     }
 }
+
+# Write out the XSA
+write_hw_platform -fixed -include_bit -force -file $BUILD_DIR/$PROJECT.xsa
 
 if {$STOP_AFTER eq "impl"} {
     puts "Stopping after implementation."
