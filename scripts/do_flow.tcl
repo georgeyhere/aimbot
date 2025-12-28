@@ -52,7 +52,7 @@ if {![info exists BRD_PART]} {
 print_flow_config
 
 # Validate STOP_AFTER value
-set valid_stages {create bd wrapper xdc post synthesis all}
+set valid_stages {create bd wrapper xdc post synthesis impl all}
 if {[lsearch -exact $valid_stages $STOP_AFTER] == -1} {
     puts "Error: Invalid STOP_AFTER value '$STOP_AFTER'. Valid: $valid_stages"
     exit 1
@@ -61,8 +61,8 @@ if {[lsearch -exact $valid_stages $STOP_AFTER] == -1} {
 ##########################################
 # Run the flow
 ###########################################
+# Note that STOP_AFTER logic is self-contained in each steps' script
 source "$WORKROOT/scripts/create_project.tcl"
+source "$WORKROOT/scripts/run_synthesis.tcl"
+source "$WORKROOT/scripts/run_impl.tcl"
 
-if {$STOP_AFTER eq "synthesis" || $STOP_AFTER eq "all"} {
-    source "$WORKROOT/scripts/run_synthesis.tcl"
-}

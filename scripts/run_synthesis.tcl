@@ -1,52 +1,38 @@
 # run_synthesis.tcl
-# Usage: vivado -mode batch -source run_synthesis.tcl -notrace -log synth.log
+# Run synthesis for a Vivado project
+# Usage (standalone): vivado -mode batch -source run_synthesis.tcl -tclargs <PROJECT> -notrace -log synth.log
+# Usage (sourced):    Called from do_flow.tcl with PROJECT variable already defined
 
-# Check if WORKROOT is set
+# Setup
 if {![info exists ::env(WORKROOT)] || [string length $::env(WORKROOT)] == 0} {
     puts "Error: WORKROOT environment variable not set. Please source setup.sh first."
     exit 1
 }
+source $::env(WORKROOT)/scripts/utils.tcl
 
-# Ensure we are in the correct working directory
-cd $::env(WORKROOT)
-
-# Get project name from arguments
-set PROJECT [lindex $argv 0]
-if {$PROJECT eq ""} {
-    puts "Error: No project name provided."
-    exit 1
+# Make sure the Vivado project is opened.
+# PROJECT variable is already set when run from do_flow.tcl.
+# However, if it's run standalone, it needs to be passed in as an argument.
+if {![info exists PROJECT] || $PROJECT eq ""} {
+    set PROJECT [lindex $argv 0]
+    if {$PROJECT eq ""} {
+        puts "Error: No project name provided."
+        exit 1
+    }
 }
+open_project_if_not_open $PROJECT
 
-set BUILD_DIR "$::env(WORKROOT)/lib/${PROJECT}_build"
-
-# Open the project
-set PRJ_NAME $PROJECT
-set XPR_FILE "$BUILD_DIR/$PRJ_NAME.xpr"
-if {![file exists $XPR_FILE]} {
-    puts "Error: Project file $XPR_FILE not found."
-    exit 1
-}
-
-# Check if the project is already open. If so, skip open_project.
-set already_open 0
-if {[catch {set cur [current_project]} err]} {
-    set already_open 0
-} else {
-    # current_project returned a project handle; check its name
-    if {[catch {set cur_name [get_property NAME $cur]} _] == 0} {
-        if {$cur_name eq $PRJ_NAME} {
-            puts "Project $PRJ_NAME already open (current project); skipping open_project."
-            set already_open 1
-        }
+# Apply synthesis options if defined in the project defines file
+if {[info exists SYNTH_OPTS] && [llength $SYNTH_OPTS] > 0} {
+    puts "Applying synthesis options to synth_1 run:"
+    foreach {key value} $SYNTH_OPTS {
+        puts "  Setting STEPS.SYNTH_DESIGN.ARGS.$key = $value"
+        set_property STEPS.SYNTH_DESIGN.ARGS.$key $value [get_runs synth_1]
     }
 }
 
-if {$already_open == 0} {
-    puts "Opening Vivado project: $XPR_FILE"
-    open_project $XPR_FILE
-}
-
-
+# Launch the synthesis  
+# TODO: Let user specify number of jobs via setup.sh
 puts "Launching synthesis: launch_runs synth_1 -jobs 16"
 set rc [catch {launch_runs synth_1 -jobs 16} synth_result]
 if {$rc != 0} {
