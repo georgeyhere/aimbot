@@ -49,7 +49,6 @@ project:
 		echo "Error: Invalid project '$(PROJECT)'. Valid projects: $(PROJECTS)"; \
 		exit 1; \
 	fi
-	. ./setup.sh
 	@if [ -z "$$WORKROOT" ]; then \
 		echo "Error: WORKROOT not set. Please source ./setup.sh first."; \
 		exit 1; \
