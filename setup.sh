@@ -1,24 +1,35 @@
 #!/bin/bash
 
-#VIVADO_VERSION="2024.1"
-VIVADO_VERSION="2025.2"
+#XILINX_VERSION="2024.1"
+XILINX_VERSION="2025.2"
 
-# Setup Vivado
+# Setup Xilinx tools
 unset XILINX_VIVADO
+unset XILINX_VITIS
 if [ -z "$XILINX_VIVADO" ]; then
-  if [ "$VIVADO_VERSION" = "2025.2" ]; then
-    SETTINGS_PATH="/tools/Xilinx/2025.2/Vivado/settings64.sh"
+  if [ "$XILINX_VERSION" = "2025.2" ]; then
+    VIVADO_SETTINGS="/tools/Xilinx/2025.2/Vivado/settings64.sh"
+    VITIS_SETTINGS="/tools/Xilinx/2025.2/Vitis/settings64.sh"
   else
-    SETTINGS_PATH="/tools/Xilinx/Vivado/$VIVADO_VERSION/settings64.sh"
+    VIVADO_SETTINGS="/tools/Xilinx/Vivado/$XILINX_VERSION/settings64.sh"
+    VITIS_SETTINGS="/tools/Xilinx/Vitis/$XILINX_VERSION/settings64.sh"
   fi
 
-  if [ -f "$SETTINGS_PATH" ]; then
-    echo "Sourcing Vivado settings from $SETTINGS_PATH"
-    source "$SETTINGS_PATH"
+  if [ -f "$VIVADO_SETTINGS" ]; then
+    echo "Sourcing Vivado settings from $VIVADO_SETTINGS"
+    source "$VIVADO_SETTINGS"
   else
-    echo "Error: Vivado settings not found at $SETTINGS_PATH."
+    echo "Error: Vivado settings not found at $VIVADO_SETTINGS."
     echo "Please install Vivado or set XILINX_VIVADO manually."
     exit 1
+  fi
+
+  if [ -f "$VITIS_SETTINGS" ]; then
+    echo "Sourcing Vitis settings from $VITIS_SETTINGS"
+    source "$VITIS_SETTINGS"
+  else
+    echo "Warning: Vitis settings not found at $VITIS_SETTINGS."
+    echo "Vitis tools may not be available."
   fi
 fi
 if [ -z "$XILINX_VIVADO" ]; then
@@ -40,6 +51,7 @@ echo "####################################################"
 echo "WORKROOT      : $WORKROOT"
 echo ""
 echo "XILINX_VIVADO : $XILINX_VIVADO"
+echo "XILINX_VITIS  : $XILINX_VITIS"
 echo "XVLOG         : $XVLOG"
 echo "XELAB         : $XELAB"
 echo "XSIM          : $XSIM"
