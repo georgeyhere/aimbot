@@ -7,6 +7,8 @@ XILINX_VERSION="2025.2"
 unset XILINX_VIVADO
 unset XILINX_VITIS
 if [ -z "$XILINX_VIVADO" ]; then
+  
+  # Update this if your installation path is different
   if [ "$XILINX_VERSION" = "2025.2" ]; then
     VIVADO_SETTINGS="/tools/Xilinx/2025.2/Vivado/settings64.sh"
     VITIS_SETTINGS="/tools/Xilinx/2025.2/Vitis/settings64.sh"
