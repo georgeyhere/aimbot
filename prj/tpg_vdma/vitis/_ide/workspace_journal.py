@@ -10,3 +10,13 @@ status = platform.build()
 comp = client.get_component(name="app_tpg_vdma_demo")
 comp.build()
 
+status = platform.build()
+
+status = platform.build()
+
+status = platform.build()
+
+comp.build()
+
+status = comp.clean()
+
