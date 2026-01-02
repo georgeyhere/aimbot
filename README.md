@@ -2,7 +2,7 @@
 
 # aimbot
 
-Under construction ...
+This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically my Zybo Z7-20).
 
 ## Cloning
 
@@ -18,37 +18,52 @@ If you already cloned without `--recursive`, initialize submodules with:
 git submodule update --init --recursive
 ```
 
-## Repository Structure
-This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically my Zybo Z7-20).
+## Dependencies
+* Ubuntu 22.04 
+* Vivado 2025.2
+* Vitis 2025.2
 
-TODO
-
-## tpg_vdma
+## Run Flow
 
 Setup the environment. You may need to edit it to point to your Vivado install path. 
 
-**Vivado 2025.2 is required.**
+This is required before proceeding with either of the steps below.
+
 ```bash
 source ./setup.sh
 ```
 
+### Running FW
+The Vitis workspace (application and platform projects) are checked in under `prj/<prj_name>/vitis`.
 
-To recreate Vivado project and kick runs:
+It can be built and run directly without rerunning Vivado.
+
+Vitis 2025.2 has Git integration. However, some files have absolute pathing that's not very friendly.  
+The Vitis workspaces in this repo have those absolute paths scrubbed. To restore them based on your current repo path, 
+use the following make target before opening the workspace in Vitis.
+```bash
+make vitis_setup
+```
+
+The absolute paths can be re-scrubbed with the following make target:
+```bash
+make vitis_clean
+```
+
+### Regenerating HW design
+To recreate Vivado project and regenerate XSA:
 ```bash
 make project PROJECT=tpg_vdma
 ```
 
+To recreate Vivado project without kicking synthesis / PnR runs:
+```bash
+make project PROJECT=tpg_vdma STOP_AFTER=xdc
+```
 
-## Build Flow
+To run Vivado flow in GUI mode, set GUI=1:
+```bash
+make project PROJECT=tpg_vdma STOP_AFTER=xdc GUI=1
+```
 
-This repo uses a primarily Make/TCL-based flow to drive the Vivado build process.
-
-- `make project PROJECT=<name> STOP_AFTER=<>` invokes the main Tcl flow script: `scripts/do_flow.tcl`. 
-
-`do_flow.tcl` then performs the following:  
-1) Sources `utils.tcl` 
-2) Sources project specific defines from `prj/<PROJECT>/<PROJECT>_defines.tcl`
-3) Executes `create_project.tcl` to create a Vivado project, setup block design, etc etc
-4) Executes `run_synthesis.tcl` to kick a synthesis run.
-5) Executes `run_par.tcl` to kick a placement run.
 
