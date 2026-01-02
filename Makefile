@@ -61,14 +61,14 @@ project:
 #####################
 # Vitis Misc Tasks  #
 #####################
-setup_vitis:
+vitis_setup:
 	@for d in $(shell find prj -mindepth 2 -maxdepth 2 -type d -name vitis); do \
 		prj_name=$$(basename $$(dirname $$d)); \
 		echo "Sanitizing Vitis project: $$prj_name"; \
 		python3 $(WORKROOT)/scripts/utility/sanitize_absolute_paths.py $$prj_name setup; \
 	done
 
-clean_vitis:
+vitis_clean:
 	@for d in $(shell find prj -mindepth 2 -maxdepth 2 -type d -name vitis); do \
 		prj_name=$$(basename $$(dirname $$d)); \
 		echo "Sanitizing Vitis project: $$prj_name"; \
@@ -79,7 +79,7 @@ clean_vitis:
 # Clean Targets     #
 #####################
 .PHONY: clean
-clean: clean_vitis
+clean: vitis_clean
 	rm -rf .Xil
 	rm -rf xvlog*
 	rm -rf xelab*

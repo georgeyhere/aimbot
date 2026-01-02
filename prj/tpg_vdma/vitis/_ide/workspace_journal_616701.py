@@ -1,8 +1,30 @@
-# 2025-12-31T18:17:42.118561966
+# 2026-01-01T15:16:01.208323023
 import vitis
 
 client = vitis.create_client()
 client.set_workspace(path="vitis")
+
+platform = client.create_platform_component(name = "tpg_vdma_platform",hw_design = "$COMPONENT_LOCATION/../../tpg_vdma.xsa",os = "standalone",cpu = "ps7_cortexa9_0",domain_name = "standalone_ps7_cortexa9_0",compiler = "gcc")
+
+comp = client.create_app_component(name="app_tpg_vdma_demo",platform = "$COMPONENT_LOCATION/../tpg_vdma_platform/export/tpg_vdma_platform/tpg_vdma_platform.xpfm",domain = "standalone_ps7_cortexa9_0")
+
+platform = client.get_component(name="tpg_vdma_platform")
+status = platform.build()
+
+comp = client.get_component(name="app_tpg_vdma_demo")
+comp.build()
+
+status = platform.build()
+
+comp.build()
+
+status = platform.update_hw(hw_design = "$COMPONENT_LOCATION/../../../../lib/tpg_vdma_build/tpg_vdma.xsa")
+
+status = platform.build()
+
+comp.build()
+
+status = platform.build()
 
 vitis.dispose()
 

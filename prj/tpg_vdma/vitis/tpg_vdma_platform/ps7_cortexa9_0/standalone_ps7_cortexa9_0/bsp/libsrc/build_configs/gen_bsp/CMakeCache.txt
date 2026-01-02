@@ -238,8 +238,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/tools/Xilinx/2025.2/Vitis/gnu/aarch32/lin/gcc-arm-none-eabi/bin/arm-none-eabi-strip
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/cortexa9_toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/cortexa9_toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -290,6 +290,15 @@ XILTIMER_tick_timer:STRING=None
 YOCTO:BOOL=OFF
 
 //Value Computed by CMake
+axivdma_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/axivdma/src
+
+//Value Computed by CMake
+axivdma_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+axivdma_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/axivdma/src
+
+//Value Computed by CMake
 bsp_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp
 
 //Value Computed by CMake
@@ -297,6 +306,69 @@ bsp_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 bsp_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+
+//Value Computed by CMake
+common_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/common/src
+
+//Value Computed by CMake
+common_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+common_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/common/src
+
+//Value Computed by CMake
+coresightps_dcc_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/coresightps_dcc/src
+
+//Value Computed by CMake
+coresightps_dcc_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+coresightps_dcc_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/coresightps_dcc/src
+
+//Value Computed by CMake
+devcfg_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/devcfg/src
+
+//Value Computed by CMake
+devcfg_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+devcfg_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/devcfg/src
+
+//Value Computed by CMake
+dmaps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/dmaps/src
+
+//Value Computed by CMake
+dmaps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+dmaps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/dmaps/src
+
+//Value Computed by CMake
+emacps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/emacps/src
+
+//Value Computed by CMake
+emacps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+emacps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/emacps/src
+
+//Value Computed by CMake
+gpiops_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/gpiops/src
+
+//Value Computed by CMake
+gpiops_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gpiops_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/gpiops/src
+
+//Value Computed by CMake
+libxil_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc
+
+//Value Computed by CMake
+libxil_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+libxil_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc
 
 //Archiver used to archive libraries for both BSP generation as
 // well as applications.
@@ -317,6 +389,51 @@ proc_compiler_flags:STRING= -DSDT -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard;-
 
 //Extra Compiler Flags used in BSP and library generation
 proc_extra_compiler_flags:STRING= -O2 -g -Wall -Wextra -fno-tree-loop-distribute-patterns
+
+//Value Computed by CMake
+qspips_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/qspips/src
+
+//Value Computed by CMake
+qspips_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+qspips_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/qspips/src
+
+//Value Computed by CMake
+scugic_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/scugic/src
+
+//Value Computed by CMake
+scugic_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+scugic_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/scugic/src
+
+//Value Computed by CMake
+scutimer_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/scutimer/src
+
+//Value Computed by CMake
+scutimer_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+scutimer_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/scutimer/src
+
+//Value Computed by CMake
+scuwdt_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/scuwdt/src
+
+//Value Computed by CMake
+scuwdt_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+scuwdt_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/scuwdt/src
+
+//Value Computed by CMake
+sdps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/sdps/src
+
+//Value Computed by CMake
+sdps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+sdps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/sdps/src
 
 //This option is not supported in the Unified Vitis IDE in this
 // version. Change to the classic IDE if you want to use this option
@@ -346,6 +463,60 @@ standalone_ttc_select_cntr:STRING=None
 
 //Enable xpm support
 standalone_xpm_support:BOOL=OFF
+
+//Value Computed by CMake
+uartps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/uartps/src
+
+//Value Computed by CMake
+uartps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+uartps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/uartps/src
+
+//Value Computed by CMake
+usbps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/usbps/src
+
+//Value Computed by CMake
+usbps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+usbps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/usbps/src
+
+//Value Computed by CMake
+v_tpg_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/v_tpg/src
+
+//Value Computed by CMake
+v_tpg_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+v_tpg_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/v_tpg/src
+
+//Value Computed by CMake
+video_common_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/video_common/src
+
+//Value Computed by CMake
+video_common_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+video_common_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/video_common/src
+
+//Value Computed by CMake
+vtc_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/vtc/src
+
+//Value Computed by CMake
+vtc_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+vtc_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/vtc/src
+
+//Value Computed by CMake
+xadcps_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/xadcps/src
+
+//Value Computed by CMake
+xadcps_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+xadcps_SOURCE_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/xadcps/src
 
 //Value Computed by CMake
 xilstandalone_BINARY_DIR:STATIC=/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp/libsrc/build_configs/gen_bsp/libsrc/standalone/src
@@ -477,7 +648,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=31
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

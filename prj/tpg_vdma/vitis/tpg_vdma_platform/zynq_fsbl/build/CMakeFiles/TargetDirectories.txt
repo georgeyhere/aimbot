@@ -1,0 +1,4 @@
+/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/zynq_fsbl/build/CMakeFiles/fsbl.elf.dir
+/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/zynq_fsbl/build/CMakeFiles/print_build_info.dir
+/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/zynq_fsbl/build/CMakeFiles/edit_cache.dir
+/home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/zynq_fsbl/build/CMakeFiles/rebuild_cache.dir
