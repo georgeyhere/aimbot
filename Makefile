@@ -56,7 +56,7 @@ project:
 		exit 1; \
 	fi
 	mkdir -p lib
-	$(XILINX_VIVADO)/bin/vivado -mode $(VIVADO_MODE) -source $(WORKROOT)/scripts/do_flow.tcl -tclargs $(PROJECT) $(STOP_AFTER) -notrace -log flow_$(PROJECT).log
+	$(XILINX_VIVADO)/bin/vivado -mode $(VIVADO_MODE) -source $(WORKROOT)/scripts/vivado/do_flow.tcl -tclargs $(PROJECT) $(STOP_AFTER) -notrace -log flow_$(PROJECT).log
 
 #####################
 # Vitis Misc Tasks  #
