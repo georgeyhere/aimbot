@@ -3,7 +3,7 @@
   "type": "PLATFORM",
   "configuration": {
     "description": "",
-    "xsa": "/home/george/repos/aimbot/prj/tpg_vdma/tpg_vdma.xsa",
+    "xsa": "$WORKROOT/prj/tpg_vdma/tpg_vdma.xsa",
     "xsaPathInPlatform": "tpg_vdma_platform/hw/tpg_vdma.xsa",
     "emulationXsa": "",
     "emulationXsaPathInPlatform": "",

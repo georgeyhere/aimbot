@@ -1,6 +1,6 @@
 sdt: hw_artifacts/ps7_cortexa9_0_baremetal.dts
 family: Zynq
-path: /home/george/repos/aimbot/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
+path: $WORKROOT/prj/tpg_vdma/vitis/tpg_vdma_platform/ps7_cortexa9_0/standalone_ps7_cortexa9_0/bsp
 config: default
 os: standalone
 os_info:
