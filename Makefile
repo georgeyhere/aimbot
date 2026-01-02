@@ -38,7 +38,9 @@ help:
 	@echo "    make clean                                         # Clean all build artifacts"
 	@echo "-----------------------------------------------------------------------------"
 
-
+#####################
+# Vivado Flow Entry #
+#####################
 .PHONY: project
 project:
 	@if [ -z "$(PROJECT)" ]; then \
@@ -56,8 +58,28 @@ project:
 	mkdir -p lib
 	$(XILINX_VIVADO)/bin/vivado -mode $(VIVADO_MODE) -source $(WORKROOT)/scripts/do_flow.tcl -tclargs $(PROJECT) $(STOP_AFTER) -notrace -log flow_$(PROJECT).log
 
+#####################
+# Vitis Misc Tasks  #
+#####################
+setup_vitis:
+	@for d in $(shell find prj -mindepth 2 -maxdepth 2 -type d -name vitis); do \
+		prj_name=$$(basename $$(dirname $$d)); \
+		echo "Sanitizing Vitis project: $$prj_name"; \
+		python3 $(WORKROOT)/scripts/utility/sanitize_absolute_paths.py $$prj_name setup; \
+	done
+
+clean_vitis:
+	@for d in $(shell find prj -mindepth 2 -maxdepth 2 -type d -name vitis); do \
+		prj_name=$$(basename $$(dirname $$d)); \
+		echo "Sanitizing Vitis project: $$prj_name"; \
+		python3 $(WORKROOT)/scripts/utility/sanitize_absolute_paths.py $$prj_name sanitize; \
+	done
+
+#####################
+# Clean Targets     #
+#####################
 .PHONY: clean
-clean:
+clean: clean_vitis
 	rm -rf .Xil
 	rm -rf xvlog*
 	rm -rf xelab*
