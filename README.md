@@ -23,6 +23,14 @@ git submodule update --init --recursive
 * Vivado 2025.2
 * Vitis 2025.2
 
+
+## Projects in this Repo
+
+### tpg_vdma
+HW design + FW demonstrating Xilinx VDMA, VTC, and TPG IP usage with HDMI output via Digilent RGB2DVI IP.
+
+Bare-metal and Petalinux apps planned.
+
 ## Run Flow
 
 Setup the environment. You may need to edit it to point to your Vivado install path. 
@@ -65,5 +73,6 @@ To run Vivado flow in GUI mode, set GUI=1:
 ```bash
 make project PROJECT=tpg_vdma STOP_AFTER=xdc GUI=1
 ```
+
 
 
