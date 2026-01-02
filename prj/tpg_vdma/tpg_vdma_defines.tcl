@@ -1,0 +1,39 @@
+# Vivado project settings for VDMA TPG project
+
+set PRJ_NAME "tpg_vdma"
+set PART     "xc7z020clg400-1"
+set BRD_PART "digilentinc.com:zybo-z7-20:part0:1.2"
+
+# Block design TCL scripts to be run during build_project. 
+# These should be generated from Vivado via write_bd_tcl. 
+# For example:
+# > write_bd_tcl -force /home/george/repos/aimbot/prj/tpg_vdma/bd/vdma_tpg.tcl
+set BD_TCL_SCRIPTS [list "bd/tpg_vdma_bd.tcl"]
+
+# Synthesis Options
+# Corresponds to STEPS.SYNTH_DESIGN.ARGS
+set SYNTH_OPTS {
+    DIRECTIVE default
+    RESOURCE_SHARING auto
+}
+
+# Enable phys_opt_design?
+set PHYS_OPT_DESIGN_EN "true"
+set PHYS_OPT_OPTS {
+}
+
+# Optimize Options
+set OPT_OPTS {
+}
+
+# Place Options
+set PLACE_OPTS {
+}
+
+# Route Options
+set ROUTE_OPTS {
+}
+
+# Bitstream Options
+set BITSTREAM_OPTS {
+}

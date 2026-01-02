@@ -4,6 +4,51 @@
 
 Under construction ...
 
+## Cloning
+
+This repository uses git submodules. To clone with dependencies:
+
+```bash
+git clone --recursive <repository-url>
+```
+
+If you already cloned without `--recursive`, initialize submodules with:
+
+```bash
+git submodule update --init --recursive
+```
+
+## Repository Structure
+This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically my Zybo Z7-20).
+
+TODO
+
+## tpg_vdma
+
+Setup the environment. You may need to edit it to point to your Vivado install path. 
+
+**Vivado 2025.2 is required.**
+```bash
+source ./setup.sh
+```
 
 
+To recreate Vivado project and kick runs:
+```bash
+make project PROJECT=tpg_vdma
+```
+
+
+## Build Flow
+
+This repo uses a primarily Make/TCL-based flow to drive the Vivado build process.
+
+- `make project PROJECT=<name> STOP_AFTER=<>` invokes the main Tcl flow script: `scripts/do_flow.tcl`. 
+
+`do_flow.tcl` then performs the following:  
+1) Sources `utils.tcl` 
+2) Sources project specific defines from `prj/<PROJECT>/<PROJECT>_defines.tcl`
+3) Executes `create_project.tcl` to create a Vivado project, setup block design, etc etc
+4) Executes `run_synthesis.tcl` to kick a synthesis run.
+5) Executes `run_par.tcl` to kick a placement run.
 
