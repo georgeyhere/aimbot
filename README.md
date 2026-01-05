@@ -42,20 +42,16 @@ source ./setup.sh
 ```
 
 ### Running FW
-The Vitis workspace (application and platform projects) are checked in under `prj/<prj_name>/vitis`.
-
-It can be built and run directly without rerunning Vivado.
-
-Vitis 2025.2 has Git integration. However, some files have absolute pathing that's not very friendly.  
-The Vitis workspaces in this repo have those absolute paths scrubbed. To restore them based on your current repo path, 
-use the following make target before opening the workspace in Vitis.
+To regenerate the Vitis workspace from the prebuilt .xsa at `prj/tpg_vdma/tpg_vdma.xsa`:
 ```bash
-make vitis_setup
+make vitis_init PROJECT=tpg_vdma
 ```
 
-The absolute paths can be re-scrubbed with the following make target:
+The workspace will be created at `lib/tpg_vdma_vitis`.
+
+To build application `app_tpg_vdma_demo`:
 ```bash
-make vitis_clean
+make vitis_build PROJECT=tpg_vdma APP=app_tpg_vdma_demo
 ```
 
 ### Regenerating HW design
