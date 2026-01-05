@@ -2,26 +2,21 @@
 
 # aimbot
 
-This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically my Zybo Z7-20).
-
-## Cloning
-
-This repository uses git submodules. To clone with dependencies:
-
-```bash
-git clone --recursive <repository-url>
-```
-
-If you already cloned without `--recursive`, initialize submodules with:
-
-```bash
-git submodule update --init --recursive
-```
+This is a sort of monorepo containing various projects pertaining to CV on Zynq 7000 (specifically Digilent Zybo Z7-20).
 
 ## Dependencies
 * Ubuntu 22.04 
 * Vivado 2025.2
 * Vitis 2025.2
+
+## Cloning
+
+This repository uses git submodules. 
+Either clone with `--recursive`, or initialize submodules with:
+
+```bash
+git submodule update --init --recursive
+```
 
 
 ## Projects in this Repo
