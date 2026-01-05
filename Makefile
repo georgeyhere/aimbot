@@ -75,6 +75,12 @@ vitis_clean:
 		python3 $(WORKROOT)/scripts/utility/sanitize_absolute_paths.py $$prj_name sanitize; \
 	done
 
+vitis_init:
+	vitis -s $(WORKROOT)/scripts/vitis/vitis_init.py --prj $(PROJECT)
+
+vitis_build:
+	scripts/vitis/build_app.sh $(PROJECT) $(APP)
+
 #####################
 # Clean Targets     #
 #####################
@@ -91,5 +97,6 @@ clean: vitis_clean
 	rm -rf transcript
 	rm -rf work
 	rm -rf lib
+	rm -rf vitis_journal.py
 
 

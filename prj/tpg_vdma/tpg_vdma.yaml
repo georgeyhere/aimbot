@@ -1,0 +1,11 @@
+
+hw_platform:
+  platform_name: tpg_vdma_platform
+  hw_design: prj/tpg_vdma/tpg_vdma.xsa
+  cpu: ps7_cortexa9_0
+  os: standalone
+  domain_name: standalone_ps7_cortexa9_0
+
+app_tpg_vdma_demo:
+  app_name: app_tpg_vdma_demo
+  import: prj/tpg_vdma/sw/app_tpg_vdma

@@ -12,6 +12,7 @@ if [ -z "$XILINX_VIVADO" ]; then
   if [ "$XILINX_VERSION" = "2025.2" ]; then
     VIVADO_SETTINGS="/tools/Xilinx/2025.2/Vivado/settings64.sh"
     VITIS_SETTINGS="/tools/Xilinx/2025.2/Vitis/settings64.sh"
+    VITIS_PYTHON_SETTINGS="/tools/Xilinx/2025.2/Vitis/cli/examples/customer_python_utils/setup_vitis_env.sh"
   else
     VIVADO_SETTINGS="/tools/Xilinx/Vivado/$XILINX_VERSION/settings64.sh"
     VITIS_SETTINGS="/tools/Xilinx/Vitis/$XILINX_VERSION/settings64.sh"

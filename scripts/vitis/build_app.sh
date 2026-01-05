@@ -1,6 +1,6 @@
 # build_app.sh
 # 
-# This script is a wrapper for Vitis V++ project build.
+# This script is a wrapper for Vitis V++ baremetal project build.
 # Make sure to run setup.sh first.
 # 
 # Usage:
@@ -18,8 +18,8 @@ APP_NAME="$2"
 ACTION="${3:-build}"
 
 # Define source and build directories
-SRC_DIR="/home/george/repos/aimbot/prj/${PROJECT_NAME}/vitis/${APP_NAME}/src"
-BUILD_DIR="/home/george/repos/aimbot/prj/${PROJECT_NAME}/vitis/${APP_NAME}/build"
+SRC_DIR="/home/george/repos/aimbot/lib/${PROJECT_NAME}_vitis/${APP_NAME}/src"
+BUILD_DIR="/home/george/repos/aimbot/lib/${PROJECT_NAME}_vitis/${APP_NAME}/build"
 
 if [ "$ACTION" = "clean" ]; then
 	echo "Cleaning build for Vitis app: $APP_NAME in project: $PROJECT_NAME"
