@@ -37,7 +37,7 @@ source ./setup.sh
 ```
 
 ### Running FW
-To regenerate the Vitis workspace from the prebuilt .xsa at `prj/tpg_vdma/tpg_vdma.xsa`:
+To regenerate the Vitis workspace (BSP + applications) using the prebuilt `.xsa` and sources under `prj/tpg_vdma`:
 ```bash
 make vitis_init PROJECT=tpg_vdma
 ```
