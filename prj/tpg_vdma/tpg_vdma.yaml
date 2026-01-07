@@ -8,4 +8,4 @@ hw_platform:
 
 app_tpg_vdma_demo:
   app_name: app_tpg_vdma_demo
-  import: prj/tpg_vdma/sw/app_tpg_vdma
+  import: prj/tpg_vdma/sw/app_tpg_vdma/src
