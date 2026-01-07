@@ -14,7 +14,7 @@ int main() {
     // Initialize VDMA
     XAxiVdma VdmaInstance;
     XAxiVdma_Config *VdmaConfig;
-    VdmaConfig = XAxiVdma_LookupConfig(0);
+    VdmaConfig = XAxiVdma_LookupConfig(XPAR_AXI_VDMA_0_BASEADDR);
     if (!VdmaConfig) {
         xil_printf("No VDMA configuration found!\n\r");
         return XST_FAILURE;
@@ -29,7 +29,7 @@ int main() {
     // Initialize VTC
     XVtc        VtcInstance;
     XVtc_Config *VtcConfig;
-    VtcConfig = XVtc_LookupConfig(0);
+    VtcConfig = XVtc_LookupConfig(XPAR_XVTC_0_BASEADDR);
     if (!VtcConfig) {
         xil_printf("No VTC configuration found!\n\r");
         return XST_FAILURE;
@@ -44,7 +44,7 @@ int main() {
     // Initialize TPG
     XV_tpg TpgInstance;
     XV_tpg_Config *TpgConfig;
-    TpgConfig = XV_tpg_LookupConfig(0);
+    TpgConfig = XV_tpg_LookupConfig(XPAR_V_TPG_0_BASEADDR);
     if (!TpgConfig) {
         xil_printf("No TPG configuration found!\n\r");
         return XST_FAILURE;
