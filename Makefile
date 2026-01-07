@@ -81,6 +81,8 @@ vitis_init:
 vitis_build:
 	scripts/vitis/build_app.sh $(PROJECT) $(APP)
 
+vitis: vitis_init vitis_build
+
 #####################
 # Clean Targets     #
 #####################
