@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "gdbpath": "/tools/Xilinx/Vitis/2024.1/gnu/aarch64/lin/aarch64-none/bin/aarch64-none-elf-gdb",
+            "name": "app_tpg_vdma_demo",
+            "target": "extended-remote localhost:3001",
+            "executable": "./lib/tpg_vdma_vitis/app_tpg_vdma_demo/build/app_tpg_vdma_demo.elf",
+            "cwd": "${workspaceRoot}",
+            "autorun": [
+                "monitor ps",
+                "set confirm off",
+                "file ./lib/tpg_vdma_vitis/app_tpg_vdma_demo/build/app_tpg_vdma_demo.elf"
+            ]
+        },
+        {
+            "name": "Debug",
+            "type": "gdb",
+            "request": "launch",
+            "target": "./bin/executable",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText"
+        }
+
+    ]
+}

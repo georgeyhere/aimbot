@@ -1,0 +1,17 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gdb APU init",
+            "type": "shell",
+            "command": "xsdb",
+            "args": [
+                "-interactive",
+                "lib/tpg_vdma_vitis/app_tpg_vdma_demo/_ide/psinit/ps7_init.tcl"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
