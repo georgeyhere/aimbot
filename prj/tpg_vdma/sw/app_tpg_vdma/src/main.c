@@ -1,60 +1,71 @@
+/**
+ * @file main.c
+ * @brief Video Pipeline Demo Application - Main Entry Point
+ * 
+ * This application demonstrates the use of TPG, VDMA, and VTC IP blocks
+ * to generate test patterns and output video. Users can control video
+ * modes and patterns via UART console.
+ */
 
 #include "xparameters.h"
-#include "xaxivdma.h"
-#include "xvidc.h"
-#include "xvtc.h"
-#include "xv_tpg.h"
 #include "xil_printf.h"
+#include "sleep.h"
 
-int main() { 
-    xil_printf("Hello World app_tpg_vdma_demo!\n\r");
+#include "video_pipeline.h"
+#include "console.h"
+#include "app_config.h"
 
-    int Status;
+/**
+ * Main application entry point
+ */
+int main(void) 
+{
+    int status;
 
-    // Initialize VDMA
-    XAxiVdma VdmaInstance;
-    XAxiVdma_Config *VdmaConfig;
-    VdmaConfig = XAxiVdma_LookupConfig(XPAR_AXI_VDMA_0_BASEADDR);
-    if (!VdmaConfig) {
-        xil_printf("No VDMA configuration found!\n\r");
-        return XST_FAILURE;
-    }
-    Status = XAxiVdma_CfgInitialize(&VdmaInstance, VdmaConfig, VdmaConfig->BaseAddress);
-    if (Status != XST_SUCCESS) {
-        xil_printf("VDMA initialization failed!\n\r");
-        return XST_FAILURE;
-    }
-    xil_printf("VDMA initialized successfully!\n\r");
+    xil_printf("\r\n");
+    xil_printf("========================================\r\n");
+    xil_printf(" Video Pipeline Demo Application\r\n");
+    xil_printf(" Build Date: %s %s\r\n", __DATE__, __TIME__);
+    xil_printf("========================================\r\n");
+    xil_printf("\r\n");
 
-    // Initialize VTC
-    XVtc        VtcInstance;
-    XVtc_Config *VtcConfig;
-    VtcConfig = XVtc_LookupConfig(XPAR_XVTC_0_BASEADDR);
-    if (!VtcConfig) {
-        xil_printf("No VTC configuration found!\n\r");
-        return XST_FAILURE;
-    }
-    Status = XVtc_CfgInitialize(&VtcInstance, VtcConfig, VtcConfig->BaseAddress);
-    if (Status != XST_SUCCESS) {
-        xil_printf("VTC initialization failed!\n\r");
-        return XST_FAILURE;
-    }
-    xil_printf("VTC initialized successfully!\n\r");
+    /* Initialize console */
+    Console_Init();
 
-    // Initialize TPG
-    XV_tpg TpgInstance;
-    XV_tpg_Config *TpgConfig;
-    TpgConfig = XV_tpg_LookupConfig(XPAR_V_TPG_0_BASEADDR);
-    if (!TpgConfig) {
-        xil_printf("No TPG configuration found!\n\r");
+    /* Initialize video pipeline */
+    xil_printf("Initializing video pipeline...\r\n");
+    status = VideoPipeline_Init();
+    if (status != XST_SUCCESS) {
+        xil_printf("FATAL: Video pipeline initialization failed!\r\n");
         return XST_FAILURE;
     }
-    Status = XV_tpg_CfgInitialize(&TpgInstance, TpgConfig, TpgConfig->BaseAddress);
-    if (Status != XST_SUCCESS) {    
-        xil_printf("TPG initialization failed!\n\r");
-        return XST_FAILURE;
+
+    /* Set default video mode */
+    xil_printf("Setting default video mode...\r\n");
+    status = VideoPipeline_SetVideoModeById(DEFAULT_VIDEO_MODE);
+    if (status != XST_SUCCESS) {
+        xil_printf("WARNING: Failed to set default video mode\r\n");
     }
-    xil_printf("TPG initialized successfully!\n\r");
+
+    /* Start video pipeline */
+    xil_printf("Starting video pipeline...\r\n");
+    status = VideoPipeline_Start();
+    if (status != XST_SUCCESS) {
+        xil_printf("WARNING: Failed to start video pipeline\r\n");
+    }
+
+    xil_printf("\r\n");
+    xil_printf("System ready! Type 'help' for commands.\r\n");
+    xil_printf("\r\n");
+
+    /* Main loop */
+    while (1) {
+        /* Poll for console input */
+        Console_Poll();
+        
+        /* Small delay to prevent tight loop */
+        usleep(1000);
+    }
 
     return 0;
 }
